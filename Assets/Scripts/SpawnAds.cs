@@ -30,11 +30,12 @@ public class SpawnAds : MonoBehaviour
             BoxCollider2D boxCollider2D = gameObject.GetComponent<BoxCollider2D>();
             
             Vector2 location = new Vector2(transform.position.x, transform.position.y);
-            Vector2 dimentions = new Vector2(boxCollider2D.bounds.size.x / 2, boxCollider2D.bounds.size.z / 2);
+            Vector2 dimentions = new Vector2(boxCollider2D.bounds.size.x / 2, boxCollider2D.bounds.size.y / 2);
 
             Vector2 randomDimentions = new Vector2(Randomize(dimentions.x, dimentions.x * -1), Randomize(dimentions.y, dimentions.y * -1));
 
-            Instantiate(AdsToSpawn[Random.Range(0, AdsToSpawn.Length - 1)], position: new Vector3(randomDimentions.x, 0, randomDimentions.y), rotation: transform.rotation);
+            Debug.Log(randomDimentions);
+            Instantiate(AdsToSpawn[Random.Range(0, AdsToSpawn.Length)], position: new Vector3(randomDimentions.x, randomDimentions.y, 0), rotation: transform.rotation);
 
             _currentTimer -= SpawnTimer;
         }
