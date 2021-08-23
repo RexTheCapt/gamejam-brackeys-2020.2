@@ -5,14 +5,14 @@ public class SpawnAds : MonoBehaviour
     public Transform CornerTopLeft;
     public Transform CornerBottomRight;
     public float SpawnTimer = 10;
-    public GameObject[] AdsToSpawn;
+    public GameObject[] AdList;
 
     private float _currentTimer;
 
     // Start is called before the first frame update
     void Start()
     {
-        if (AdsToSpawn == null || AdsToSpawn.Length == 0)
+        if (AdList == null || AdList.Length == 0)
             throw new System.Exception("No ads to spawn");
 
         Vector2 offset = gameObject.GetComponent<BoxCollider2D>().offset;
@@ -27,15 +27,15 @@ public class SpawnAds : MonoBehaviour
 
         if (_currentTimer > SpawnTimer)
         {
-            BoxCollider2D boxCollider2D = gameObject.GetComponent<BoxCollider2D>();
-            
-            Vector2 location = new Vector2(transform.position.x, transform.position.y);
-            Vector2 dimentions = new Vector2(boxCollider2D.bounds.size.x / 2, boxCollider2D.bounds.size.y / 2);
+            Bounds spawnBounds = gameObject.GetComponent<BoxCollider2D>().bounds;
+            Vector2 dimentions = new Vector2(spawnBounds.size.x / 2, spawnBounds.size.y / 2);
 
-            Vector2 randomDimentions = new Vector2(Randomize(dimentions.x, dimentions.x * -1), Randomize(dimentions.y, dimentions.y * -1));
+            // X = Width
+            // Y = Height
+            Vector2 randomDimention = new Vector2(Randomize(dimentions.x, dimentions.x * -1), Randomize(dimentions.y, dimentions.y * -1));
 
-            Debug.Log(randomDimentions);
-            Instantiate(AdsToSpawn[Random.Range(0, AdsToSpawn.Length)], position: new Vector3(randomDimentions.x, randomDimentions.y, 0), rotation: transform.rotation);
+            GameObject randomAd = AdList[Random.Range(0, AdList.Length)];
+            Instantiate(randomAd, position: new Vector3(randomDimention.x, randomDimention.y, 0), rotation: transform.rotation);
 
             _currentTimer -= SpawnTimer;
         }
