@@ -14,20 +14,31 @@ public class drag : MonoBehaviour, IDragHandler
     [SerializeField] private RectTransform dragRectTransform;
     public Canvas canvas = null;
 
+    public Collider2D screenbounds;
+
     public void OnDrag(PointerEventData eventData)
     {
         Debug.Log(dragType);
 
+        Debug.Log(Input.mousePosition.x + " " + Input.mousePosition.y);
+
         if (dragType == DragType.Normal)
         {
-            Debug.Log("Normadrag");
-            dragRectTransform.anchoredPosition += eventData.delta / canvas.scaleFactor;
+            if(Input.mousePosition.x < 1900 && Input.mousePosition.x > 10 && Input.mousePosition.y < 1082 && Input.mousePosition.y > 10)
+            {
+                Debug.Log("Normadrag");
+                dragRectTransform.anchoredPosition += eventData.delta / canvas.scaleFactor;
+            }
         }
         else
         {
-            Vector2 pos;
-            RectTransformUtility.ScreenPointToLocalPointInRectangle(canvas.transform as RectTransform, eventData.position, canvas.worldCamera, out pos);
-            transformToMove.position = canvas.transform.TransformPoint(pos);
+            if(Input.mousePosition.x < 1900 && Input.mousePosition.x > 10 && Input.mousePosition.y < 1082 && Input.mousePosition.y > 10)
+            {
+                Vector2 pos;
+                RectTransformUtility.ScreenPointToLocalPointInRectangle(canvas.transform as RectTransform, eventData.position, canvas.worldCamera, out pos);
+                transformToMove.position = canvas.transform.TransformPoint(pos);
+            }
+            
         }
     }
     

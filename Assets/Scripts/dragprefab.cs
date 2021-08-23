@@ -10,7 +10,7 @@ public class dragprefab : MonoBehaviour, IDragHandler
 
     public void OnDrag(PointerEventData eventData)
     {
-        //esds
+        
         dragRectTransform2.anchoredPosition += eventData.delta / canvas2.scaleFactor;
     }
 
