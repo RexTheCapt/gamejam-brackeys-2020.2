@@ -30,8 +30,8 @@ public class SpawnAds : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!DisableTimer)
-            _currentTimer += Time.deltaTime;
+        if (Input.GetKeyDown(KeyCode.S))
+            SpawnAd = true;
 
         if (PurgeAds)
         {
@@ -46,7 +46,7 @@ public class SpawnAds : MonoBehaviour
             PurgeAds = false;
         }
 
-        if (_currentTimer > SpawnTimer || SpawnAd)
+        if ((_currentTimer > SpawnTimer && !DisableTimer) || SpawnAd)
         {
             Canvas canvas = gameObject.GetComponent<Canvas>();
             var spawnBounds = canvas.pixelRect;
@@ -70,6 +70,12 @@ public class SpawnAds : MonoBehaviour
 
             SpawnAd = false;
         }
+    }
+
+    private void FixedUpdate()
+    {
+        if (!DisableTimer)
+            _currentTimer += Time.deltaTime;
     }
 
     private float Randomize(float x, float y)
