@@ -314,7 +314,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CornerTopLeft: {fileID: 216152422}
   CornerBottomRight: {fileID: 1009077859}
-  SpawnTimer: 0
+  SpawnTimer: 10
   AdsToSpawn:
   - {fileID: 1124048532144502075, guid: 3b97d6dead21c814baf31c2eb8b5060f, type: 3}
   - {fileID: 6212482617457152902, guid: c6167f3655c926e448d75622cee3eb69, type: 3}

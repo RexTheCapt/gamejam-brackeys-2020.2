@@ -1,6 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class SpawnAds : MonoBehaviour
@@ -15,36 +12,36 @@ public class SpawnAds : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        if (AdsToSpawn == null || AdsToSpawn.Length == 0)
+            throw new System.Exception("No ads to spawn");
+
+        Vector2 offset = gameObject.GetComponent<BoxCollider2D>().offset;
+        if (offset.x != 0 || offset.y != 0)
+            Debug.LogWarning("BoxCollider2D offset for ad spawning is not 0,0!");
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (AdsToSpawn == null || AdsToSpawn.Length == 0)
-            throw new Exception("No ads to spawn");
-
         _currentTimer += Time.deltaTime;
 
         if (_currentTimer > SpawnTimer)
         {
-            System.Random rdm = new System.Random();
-            BoxCollider2D spawnZone = gameObject.GetComponent<BoxCollider2D>();
-            var randomAd = AdsToSpawn[rdm.Next(0, AdsToSpawn.Length)];
+            BoxCollider2D boxCollider2D = gameObject.GetComponent<BoxCollider2D>();
             
-            // Get spawn width and height,
-            var width = (spawnZone.bounds.size.x / 2) - randomAd.GetComponent<CloseAd>().Body.GetComponent<SpriteRenderer>().bounds.size.x / 2;
-            var height = spawnZone.bounds.size.z / 2;
+            Vector2 location = new Vector2(transform.position.x, transform.position.y);
+            Vector2 dimentions = new Vector2(boxCollider2D.bounds.size.x / 2, boxCollider2D.bounds.size.z / 2);
 
-            //System.Random rdm = new System.Random();
+            Vector2 randomDimentions = new Vector2(Randomize(dimentions.x, dimentions.x * -1), Randomize(dimentions.y, dimentions.y * -1));
 
-            //var randomAd = AdsToSpawn[rdm.Next(0, AdsToSpawn.Length)];
-            //float width = randomAd.GetComponent<CloseAd>().Body.GetComponent<SpriteRenderer>().bounds.size.x / 2;
-            //Vector3 v = CornerTopLeft.position - CornerBottomRight.position;
-            //Vector3 position = CornerBottomRight.position + Random.value * v;
+            Instantiate(AdsToSpawn[Random.Range(0, AdsToSpawn.Length - 1)], position: new Vector3(randomDimentions.x, 0, randomDimentions.y), rotation: transform.rotation);
 
-            //Instantiate(original: randomAd, position: position, rotation: randomAd.transform.rotation);
             _currentTimer -= SpawnTimer;
         }
+    }
+
+    private float Randomize(float x, float y)
+    {
+        return Random.Range(x, y);
     }
 }
