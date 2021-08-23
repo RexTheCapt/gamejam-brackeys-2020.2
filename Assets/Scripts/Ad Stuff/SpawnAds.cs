@@ -2,6 +2,9 @@ using UnityEngine;
 
 public class SpawnAds : MonoBehaviour
 {
+    public bool DisableTimer = false;
+    public bool SpawnAd = false;
+
     public float SpawnTimer = 10;
     public float _currentTimer;
     public GameObject[] AdList;
@@ -16,9 +19,10 @@ public class SpawnAds : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        _currentTimer += Time.deltaTime;
+        if (!DisableTimer)
+            _currentTimer += Time.deltaTime;
 
-        if (_currentTimer > SpawnTimer)
+        if (_currentTimer > SpawnTimer || SpawnAd)
         {
             var spawnBounds = gameObject.GetComponent<Canvas>().pixelRect;
             Vector2 dimentions = new Vector2(spawnBounds.size.x / 2, spawnBounds.size.y / 2);
@@ -28,9 +32,14 @@ public class SpawnAds : MonoBehaviour
             Vector2 randomDimention = new Vector2(Randomize(dimentions.x, dimentions.x * -1), Randomize(dimentions.y, dimentions.y * -1));
 
             GameObject randomAd = AdList[Random.Range(0, AdList.Length)];
-            Instantiate(randomAd, position: new Vector3(randomDimention.x, randomDimention.y, 0), rotation: transform.rotation).transform.parent = transform;
+            GameObject go = Instantiate(randomAd, position: new Vector3(randomDimention.x, randomDimention.y, 0), rotation: transform.rotation);
+            go.transform.parent = transform;
+            go.GetComponent<anothertest>().SetCanvas(gameObject.GetComponent<Canvas>());
 
-            _currentTimer -= SpawnTimer;
+            if (_currentTimer > SpawnTimer)
+                _currentTimer -= SpawnTimer;
+
+            SpawnAd = false;
         }
     }
 
