@@ -34,7 +34,7 @@ public class SpawnAds : MonoBehaviour
             GameObject randomAd = AdList[Random.Range(0, AdList.Length)];
             GameObject go = Instantiate(randomAd, position: new Vector3(randomDimention.x, randomDimention.y, 0), rotation: transform.rotation);
             go.transform.parent = transform;
-            go.GetComponent<anothertest>().SetCanvas(gameObject.GetComponent<Canvas>());
+            go.GetComponent<drag>().SetCanvas(gameObject.GetComponent<Canvas>());
 
             if (_currentTimer > SpawnTimer)
                 _currentTimer -= SpawnTimer;
