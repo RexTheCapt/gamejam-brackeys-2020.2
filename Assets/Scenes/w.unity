@@ -2849,7 +2849,7 @@ GameObject:
   - component: {fileID: 1664966639}
   - component: {fileID: 1664966638}
   m_Layer: 5
-  m_Name: format (2)
+  m_Name: recipient
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2928,7 +2928,7 @@ GameObject:
   - component: {fileID: 1675504692}
   - component: {fileID: 1675504691}
   m_Layer: 5
-  m_Name: format (1)
+  m_Name: font
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
