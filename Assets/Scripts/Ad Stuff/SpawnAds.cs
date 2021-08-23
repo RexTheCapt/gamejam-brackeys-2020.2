@@ -48,7 +48,8 @@ public class SpawnAds : MonoBehaviour
 
         if (_currentTimer > SpawnTimer || SpawnAd)
         {
-            var spawnBounds = gameObject.GetComponent<Canvas>().pixelRect;
+            Canvas canvas = gameObject.GetComponent<Canvas>();
+            var spawnBounds = canvas.pixelRect;
             Vector2 dimentions = new Vector2(spawnBounds.size.x / 2, spawnBounds.size.y / 2);
 
             // X = Width
@@ -59,8 +60,9 @@ public class SpawnAds : MonoBehaviour
             GameObject go = Instantiate(randomAd);
 
             go.transform.SetParent(_midPoint.transform, false);
-            go.GetComponent<drag>().SetCanvas(gameObject.GetComponent<Canvas>());
             go.transform.localPosition = new Vector3(randomDimention.x, randomDimention.y, 0);
+            go.gameObject.GetComponentInChildren<drag>().canvas = canvas;
+            go.gameObject.GetComponentInChildren<drag>().transformToMove = go.transform;
             SpawnedAds.Add(go);
 
             if (_currentTimer > SpawnTimer)
