@@ -3182,8 +3182,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da76a7c7b6b84684d9a6b8b1c569ba9f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  parent: {fileID: 0}
+  dragType: 0
   dragRectTransform: {fileID: 1324862224}
   canvas: {fileID: 169305246}
+  screenbounds: {fileID: 0}
+  transformToMove: {fileID: 0}
 --- !u!225 &1366931344
 CanvasGroup:
   m_ObjectHideFlags: 0
