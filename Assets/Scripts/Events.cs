@@ -124,12 +124,11 @@ public class Events : MonoBehaviour
         
         if (percentage < 90)
         {
-            SceneManager.LoadScene("Lost");
+            SceneManager.LoadScene("Loss");
         }
         else
         {
-            Debug.Log($"u won with {percentage:000.0}%!");
-            //LOLW
+            SceneManager.LoadScene("Win");
         }
     }
 
