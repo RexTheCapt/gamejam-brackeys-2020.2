@@ -11,6 +11,9 @@ public class Events : MonoBehaviour
     public Animator start;
     public bool startopened = false;
 
+    public Animator sound;
+    public bool soundopened = false;
+
     public Slider volumeslider;
     public Text volumetext;
 
@@ -109,6 +112,20 @@ public class Events : MonoBehaviour
         }
 
 
+    }
+
+    public void togglesound()
+    {
+        if (soundopened == true)
+        {
+            soundopened = false;
+            sound.SetTrigger("close1");
+        }
+        else
+        {
+            soundopened = true;
+            sound.SetTrigger("open1");
+        }
     }
 
 
