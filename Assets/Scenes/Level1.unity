@@ -1637,6 +1637,18 @@ MonoBehaviour:
     pitch: 1
     loop: 0
     source: {fileID: 1367646980}
+  - name: paper
+    sound: {fileID: 8300000, guid: f637696d447caaa4eab110043c1aa2d4, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 1367646980}
+  - name: paperclose
+    sound: {fileID: 8300000, guid: eb1ad5c47573e064d9eaabee243ba29d, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 1367646980}
 --- !u!1 &458625428
 GameObject:
   m_ObjectHideFlags: 0
