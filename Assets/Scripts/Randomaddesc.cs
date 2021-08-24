@@ -10,6 +10,9 @@ public class Randomaddesc : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+
+        //random dialogbox messages :D
+
         string[] text = new string[] {
             "System.FormatException",
             "Unable to delete files",
