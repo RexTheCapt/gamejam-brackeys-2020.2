@@ -17,11 +17,18 @@ public class Events : MonoBehaviour
     public Slider volumeslider;
     public Text volumetext;
 
+    public GameObject startmenu;
+    public GameObject soundmenu;
+
     public InputField messagefield;
+    public GameObject optionswindow;
     // Start is called before the first frame update
     void Start()
     {
         ///StartCoroutine(refresh());
+        ///
+        startmenu.SetActive(true);
+        soundmenu.SetActive(true);
     }
 
     // Update is called once per frame
@@ -69,6 +76,16 @@ public class Events : MonoBehaviour
         //}
 
 
+    }
+
+    public void optionsshow()
+    {
+        optionswindow.SetActive(true);
+    }
+
+    public void optionshide()
+    {
+        optionswindow.SetActive(false);
     }
 
 
