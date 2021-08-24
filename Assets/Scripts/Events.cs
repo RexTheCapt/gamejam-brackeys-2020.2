@@ -102,18 +102,18 @@ public class Events : MonoBehaviour
     public void SendFinalMessage()
     {
         string messagetypedin = messagefield.text.ToString();
-
-        if(StringCompare(messagetypedin, "Dear Customer’s Hell Inc, I wish to complain about your product that I purchased on 29 / 08 / 2021. I am complaining because it is malfunctioning. To resolve this problem I would like you to pay me back the amount of 10 dollars. I look forward to hearing from you as soon as possible. Sincerely, Your Customer") < 90)
+        string compareText = "Dear Customer’s Hell Inc, I wish to complain about your product that I purchased on 29/08/2021. I am complaining because it is malfunctioning. To resolve this problem I would like you to pay me back the amount of 10 dollars. I look forward to hearing from you as soon as possible. Sincerely, Your Customer";
+        double percentage = StringCompare(messagetypedin, compareText);
+        
+        if (percentage < 90)
         {
-            Debug.LogWarning("u failed LOLW" + "ur score is: " + StringCompare(messagetypedin, "Dear Customer’s Hell Inc, I wish to complain about your product that I purchased on 29 / 08 / 2021. I am complaining because it is malfunctioning. To resolve this problem I would like you to pay me back the amount of 10 dollars. I look forward to hearing from you as soon as possible. Sincerely, Your Customer"));
+            Debug.LogWarning($"u failed LOLW, ur score is: {percentage:000.0}%");
         }
         else
         {
-            Debug.Log("u won!");
+            Debug.Log($"u won with {percentage:000.0}%!");
             //LOLW
         }
-
-
     }
 
     public void togglestart()
@@ -157,15 +157,21 @@ public class Events : MonoBehaviour
 
     static double StringCompare(string a, string b)
     {
+        a = a.Replace("’", "'");
+        b = b.Replace("’", "'");
+
         if (a == b) //Same string, no iteration needed.
             return 100;
+
         if ((a.Length == 0) || (b.Length == 0)) //One is empty, second is not
         {
             return 0;
         }
+
         double maxLen = a.Length > b.Length ? a.Length : b.Length;
         int minLen = a.Length < b.Length ? a.Length : b.Length;
         int sameCharAtIndex = 0;
+
         for (int i = 0; i < minLen; i++) //Compare char by char
         {
             if (a[i] == b[i])
@@ -173,6 +179,7 @@ public class Events : MonoBehaviour
                 sameCharAtIndex++;
             }
         }
+
         return sameCharAtIndex / maxLen * 100;
     }
 
