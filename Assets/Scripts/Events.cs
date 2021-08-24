@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class Events : MonoBehaviour
@@ -123,7 +124,7 @@ public class Events : MonoBehaviour
         
         if (percentage < 90)
         {
-            Debug.LogWarning($"u failed LOLW, ur score is: {percentage:000.0}%");
+            SceneManager.LoadScene("Lost");
         }
         else
         {
