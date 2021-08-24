@@ -25,6 +25,7 @@ public class SpawnAds : MonoBehaviour
         _midPoint.transform.parent = transform;
         Instantiate(_midPoint);
         _midPoint.transform.localPosition = Vector2.zero;
+        _midPoint.name = $"Ads midpoint";
     }
 
     // Update is called once per frame
@@ -63,6 +64,7 @@ public class SpawnAds : MonoBehaviour
             go.transform.localPosition = new Vector3(randomDimention.x, randomDimention.y, 0);
             go.gameObject.GetComponentInChildren<drag>().canvas = canvas;
             go.gameObject.GetComponentInChildren<drag>().transformToMove = go.transform;
+            
             SpawnedAds.Add(go);
 
             if (_currentTimer > SpawnTimer)
