@@ -22,6 +22,8 @@ public class Events : MonoBehaviour
 
     public InputField messagefield;
     public GameObject optionswindow;
+
+    public InputField messagecontent;
     // Start is called before the first frame update
     void Start()
     {
@@ -34,6 +36,8 @@ public class Events : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        StartCoroutine(MoveTextEnd_NextFrame());
+
         volumetext.text = (volumeslider.value * 100).ToString("000");
         //asd
 
@@ -77,6 +81,12 @@ public class Events : MonoBehaviour
         //}
 
 
+
+    }
+
+    public void deletemessagecontent()
+    {
+        messagecontent.text = "";
     }
 
     public void optionsshow()
@@ -96,7 +106,13 @@ public class Events : MonoBehaviour
         snd.PlaySound("key" + Random.Range(0, 12).ToString());
         ///.PlaySound("key1");
 
+        StartCoroutine(MoveTextEnd_NextFrame());
+    }
 
+    IEnumerator MoveTextEnd_NextFrame()
+    {
+        yield return 0; // Skip the first frame in which this is called.
+        messagecontent.MoveTextEnd(false); // Do this during the next frame.
     }
 
     public void SendFinalMessage()
