@@ -14,20 +14,13 @@ public class Events : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.LeftControl))
+        if(Input.GetKey(KeyCode.LeftControl) && Input.GetKey(KeyCode.RightControl))
         {
-            listanimator.SetTrigger("on");
+            listanimator.SetBool("Show", true);
         }
-
-        if (Input.GetKeyUp(KeyCode.LeftControl))
+        else
         {
-            listanimator.SetTrigger("off");
+            listanimator.SetBool("Show", false);
         }
-
-        if(Input.GetKey(KeyCode.LeftControl) == false)
-        {
-            listanimator.SetTrigger("off");
-        }
-
     }
 }
