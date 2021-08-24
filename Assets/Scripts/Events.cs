@@ -22,6 +22,8 @@ public class Events : MonoBehaviour
 
     public InputField messagefield;
     public GameObject optionswindow;
+
+    public InputField messagecontent;
     // Start is called before the first frame update
     void Start()
     {
@@ -77,6 +79,11 @@ public class Events : MonoBehaviour
         //}
 
 
+    }
+
+    public void deletemessagecontent()
+    {
+        messagecontent.text = "";
     }
 
     public void optionsshow()
