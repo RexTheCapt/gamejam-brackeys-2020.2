@@ -118,7 +118,7 @@ public class Events : MonoBehaviour
     public void SendFinalMessage()
     {
         string messagetypedin = messagefield.text.ToString();
-        string compareText = "Dear Customer’s Hell Inc, I wish to complain about your product that I purchased on 29/08/2021. I am complaining because it is malfunctioning. To resolve this problem I would like you to pay me back the amount of 10 dollars. I look forward to hearing from you as soon as possible. Sincerely, Your Customer";
+        string compareText = "Dear Customer's Hell Inc, I wish to complain about your product that I purchased on 29/08/2021. I am complaining because it is malfunctioning. To resolve this problem I would like you to pay me back the amount of 10 dollars. I look forward to hearing from you as soon as possible. Sincerely, Your Customer";
         double percentage = StringCompare(messagetypedin, compareText);
         
         if (percentage < 90)
@@ -173,9 +173,6 @@ public class Events : MonoBehaviour
 
     static double StringCompare(string a, string b)
     {
-        a = a.Replace("’", "'");
-        b = b.Replace("’", "'");
-
         if (a == b) //Same string, no iteration needed.
             return 100;
 
@@ -198,7 +195,4 @@ public class Events : MonoBehaviour
 
         return sameCharAtIndex / maxLen * 100;
     }
-
-
-
 }
