@@ -5,10 +5,11 @@ using UnityEngine;
 public class Events : MonoBehaviour
 {
     public Animator listanimator;
+    public bool cantriggerliston = true;
     // Start is called before the first frame update
     void Start()
     {
-        
+        ///StartCoroutine(refresh());
     }
 
     // Update is called once per frame

@@ -1,9 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class bold : MonoBehaviour
 {
+    public InputField messagefield;
     // Start is called before the first frame update
     void Start()
     {
@@ -14,5 +16,10 @@ public class bold : MonoBehaviour
     void Update()
     {
         
+    }
+
+    public void boldthetext()
+    {
+        //idunnohowtoboldselectedtextinainputfieldLOLW
     }
 }
