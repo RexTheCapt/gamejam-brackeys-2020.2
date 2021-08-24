@@ -12,7 +12,7 @@ public class soundlist : MonoBehaviour
         {
             s.source = gameObject.AddComponent<AudioSource>();
             s.source.clip = s.sound;
-            s.source.volume = s.volume;
+            s.source.volume = s.volume; //change it to SFX slider vol. * master volume slider :D
             s.source.loop = s.loop;
         }
     }
