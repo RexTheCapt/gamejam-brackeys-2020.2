@@ -18,9 +18,9 @@ public class drag : MonoBehaviour, IDragHandler
 
     public void OnDrag(PointerEventData eventData)
     {
-        Debug.Log(dragType);
+        //Debug.Log(dragType);
 
-        Debug.Log(Input.mousePosition.x + " " + Input.mousePosition.y);
+        //Debug.Log(Input.mousePosition.x + " " + Input.mousePosition.y);
 
         if(dragType == DragType.Normal)
         {
