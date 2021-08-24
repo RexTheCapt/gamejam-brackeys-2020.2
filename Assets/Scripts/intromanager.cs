@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEditor.SceneManagement;
 
 public class intromanager : MonoBehaviour
 {
@@ -36,7 +37,7 @@ public class intromanager : MonoBehaviour
         yield return new WaitForSecondsRealtime(8f);
         animationcanvas.SetActive(false);
         secondcanvas.SetActive(true);
-        yield return new WaitForSecondsRealtime(3.9f);
+        yield return new WaitForSecondsRealtime(4f);
         skipbutton.SetActive(true);
     }
 
