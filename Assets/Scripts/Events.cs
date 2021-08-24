@@ -15,12 +15,24 @@ public class Events : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKey(KeyCode.LeftControl) && Input.GetKey(KeyCode.RightControl))
+        if (Input.GetKey(KeyCode.LeftControl) && Input.GetKey(KeyCode.RightControl))
         {
+            if (!listanimator.GetBool("Show"))
+            {
+                soundlist snd = GameObject.Find("PlayerEvents").GetComponent<soundlist>();
+                snd.PlaySound("paper");
+            }
+
             listanimator.SetBool("Show", true);
         }
         else
         {
+            if (listanimator.GetBool("Show"))
+            {
+                soundlist snd = GameObject.Find("PlayerEvents").GetComponent<soundlist>();
+                snd.PlaySound("paperclose");
+            }
+
             listanimator.SetBool("Show", false);
         }
 
@@ -32,17 +44,13 @@ public class Events : MonoBehaviour
         }
         */
 
-        if(Input.GetKeyUp(KeyCode.LeftControl) || Input.GetKeyUp(KeyCode.RightControl))
-        {
-            soundlist snd = GameObject.Find("PlayerEvents").GetComponent<soundlist>();
-            snd.PlaySound("paperclose");
-        }
+        //if(Input.GetKeyUp(KeyCode.LeftControl) || Input.GetKeyUp(KeyCode.RightControl))
+        //{
+        //}
 
-        if (Input.GetKey(KeyCode.LeftControl) == true && Input.GetKeyDown(KeyCode.RightControl) || Input.GetKey(KeyCode.RightControl) == true && Input.GetKeyDown(KeyCode.LeftControl))
-        {
-            soundlist snd = GameObject.Find("PlayerEvents").GetComponent<soundlist>();
-            snd.PlaySound("paper");
-        }
+        //if (Input.GetKey(KeyCode.LeftControl) == true && Input.GetKeyDown(KeyCode.RightControl) || Input.GetKey(KeyCode.RightControl) == true && Input.GetKeyDown(KeyCode.LeftControl))
+        //{
+        //}
 
 
     }
