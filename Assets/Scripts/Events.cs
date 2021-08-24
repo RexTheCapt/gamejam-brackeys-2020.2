@@ -34,7 +34,7 @@ public class Events : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        volumetext.text = volumeslider.value.ToString();
+        volumetext.text = (volumeslider.value * 10).ToString();
 
         if (Input.GetKey(KeyCode.LeftControl) && Input.GetKey(KeyCode.RightControl))
         {
@@ -121,11 +121,15 @@ public class Events : MonoBehaviour
         {
             startopened = false;
             start.SetTrigger("close");
+            soundlist snd = GameObject.Find("PlayerEvents").GetComponent<soundlist>();
+            snd.PlaySound("closetask");
         }
         else
         {
             startopened = true;
             start.SetTrigger("open");
+            soundlist snd = GameObject.Find("PlayerEvents").GetComponent<soundlist>();
+            snd.PlaySound("opentask");
         }
 
 
@@ -137,11 +141,15 @@ public class Events : MonoBehaviour
         {
             soundopened = false;
             sound.SetTrigger("close1");
+            soundlist snd = GameObject.Find("PlayerEvents").GetComponent<soundlist>();
+            snd.PlaySound("closetask");
         }
         else
         {
             soundopened = true;
             sound.SetTrigger("open1");
+            soundlist snd = GameObject.Find("PlayerEvents").GetComponent<soundlist>();
+            snd.PlaySound("opentask");
         }
     }
 

@@ -11,6 +11,8 @@ public class soundlist : MonoBehaviour
     public Slider MUSICSlider;
     public Slider MASTER;
 
+    public Slider MASTER2;
+
     public AudioSource music;
     // Start is called before the first frame update
     void Start()
@@ -39,6 +41,21 @@ public class soundlist : MonoBehaviour
         music.volume = MUSICSlider.value * MASTER.value;
 
         SaveVolumeState();
+
+        Events ev = GameObject.Find("PlayerEvents").GetComponent<Events>();
+
+       
+
+        if(ev.soundopened == false)
+        {
+            MASTER2.value = MASTER.value;
+            MASTER.value = MASTER2.value;
+        }
+        else
+        {
+            MASTER.value = MASTER2.value;
+        }
+        
     }
 
     public void SaveVolumeState()

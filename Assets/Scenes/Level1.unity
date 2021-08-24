@@ -3227,9 +3227,22 @@ MonoBehaviour:
     pitch: 1
     loop: 0
     source: {fileID: 1489740283}
+  - name: closetask
+    sound: {fileID: 8300000, guid: 1ecec09ab496a08448ee0f2710b4cdfd, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 1489740283}
+  - name: opentask
+    sound: {fileID: 8300000, guid: e4b1614d5d353d442987ecf1cb2cddb7, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 1489740283}
   SFXSlider: {fileID: 269283129}
   MUSICSlider: {fileID: 524797337}
   MASTER: {fileID: 1125400973}
+  MASTER2: {fileID: 643948200}
   music: {fileID: 1367646981}
 --- !u!1 &444701230
 GameObject:
@@ -4020,9 +4033,9 @@ MonoBehaviour:
   m_HandleRect: {fileID: 317886620}
   m_Direction: 0
   m_MinValue: 0
-  m_MaxValue: 100
-  m_WholeNumbers: 1
-  m_Value: 94
+  m_MaxValue: 1
+  m_WholeNumbers: 0
+  m_Value: 1
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
