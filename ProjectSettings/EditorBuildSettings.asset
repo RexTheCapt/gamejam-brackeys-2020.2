@@ -12,6 +12,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Level1.unity
     guid: 97b081313fe380941960f75af70ad676
   - enabled: 1
+    path: Assets/Scenes/Loss.unity
+    guid: 110fea836cf1fbf44a0e13609d32bc05
+  - enabled: 1
     path: Assets/Scenes/Credits.unity
     guid: 42f9e7ff1bb2d534292e79b4180c1c9e
   m_configObjects: {}
