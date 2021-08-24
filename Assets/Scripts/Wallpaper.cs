@@ -37,6 +37,11 @@ public class Wallpaper : MonoBehaviour
         {
             WallPaperIndex = amountofwallpapers;
         }
+
+        if (WallPaperIndex < 0)
+        {
+            WallPaperIndex = 0;
+        }
     }
 
     public void addindex()
@@ -49,10 +54,7 @@ public class Wallpaper : MonoBehaviour
             WallPaperIndex = amountofwallpapers;
         }
 
-        if (WallPaperIndex < 0)
-        {
-            WallPaperIndex = 0;
-        }
+        
     }
 
     public void subindex()
