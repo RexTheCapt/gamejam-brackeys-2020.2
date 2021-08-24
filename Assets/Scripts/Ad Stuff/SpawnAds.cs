@@ -2,6 +2,7 @@ using System.Collections.Generic;
 
 using UnityEngine;
 
+[RequireComponent(typeof(AudioSource))]
 public class SpawnAds : MonoBehaviour
 {
     public bool DisableTimer = false;
@@ -13,11 +14,22 @@ public class SpawnAds : MonoBehaviour
     public GameObject[] AdList;
 
     public List<GameObject> SpawnedAds = new List<GameObject>();
+
     private GameObject _midPoint;
+    private AudioClip _adCloseAudio;
+    private AudioClip _adOpenAudio;
 
     // Start is called before the first frame update
     void Start()
     {
+        _adCloseAudio = (AudioClip)Resources.Load("Sounds/BRECKEYS_Ad Close");
+        if (_adCloseAudio == null)
+            Debug.LogError("Ad close audio is null");
+
+        _adOpenAudio = (AudioClip)Resources.Load("Sounds/BRECKEYS_Ad Open");
+        if (_adOpenAudio == null)
+            Debug.LogError("Ad open audio is null");
+
         if (AdList == null || AdList.Length == 0)
             throw new System.Exception("No ads to spawn");
 
@@ -31,9 +43,6 @@ public class SpawnAds : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.S))
-            SpawnAd = true;
-
         if (PurgeAds)
         {
             for (int i = SpawnedAds.Count - 1; i >= 0; i--)
@@ -64,14 +73,21 @@ public class SpawnAds : MonoBehaviour
             go.transform.localPosition = new Vector3(randomDimention.x, randomDimention.y, 0);
             go.gameObject.GetComponentInChildren<drag>().canvas = canvas;
             go.gameObject.GetComponentInChildren<drag>().transformToMove = go.transform;
+            go.gameObject.GetComponentInChildren<CloseAd>().spawner = gameObject;
             
             SpawnedAds.Add(go);
+            gameObject.GetComponent<AudioSource>().PlayOneShot(_adOpenAudio);
 
             if (_currentTimer > SpawnTimer)
                 _currentTimer -= SpawnTimer;
 
             SpawnAd = false;
         }
+    }
+
+    public void PlayAdCloseSound()
+    {
+        gameObject.GetComponent<AudioSource>().PlayOneShot(_adCloseAudio);
     }
 
     private void FixedUpdate()
