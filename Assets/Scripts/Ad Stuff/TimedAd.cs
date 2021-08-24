@@ -17,16 +17,16 @@ public class TimedAd : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        TimeLeft -= Time.deltaTime;
+        //TimeLeft -= Time.deltaTime;
 
-        if (TimeLeft < 0)
+        //if (TimeLeft < 0)
         {
             gameObject.GetComponent<CloseAd>().spawner.GetComponent<SpawnAds>()._currentTimer += Time.deltaTime;
-            TextToUpdate.text = $"Time boost active!";
+            TextToUpdate.text = $"Im spawning more ads :D";
         }
-        else
-        {
-            TextToUpdate.text = $"Time left til time boost: {TimeLeft:0.0}s";
-        }
+        //else
+        //{
+        //    TextToUpdate.text = $"Time left til time boost: {TimeLeft:0.0}s";
+        //}
     }
 }
