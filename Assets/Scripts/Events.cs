@@ -8,6 +8,12 @@ public class Events : MonoBehaviour
     public Animator listanimator;
     public bool cantriggerliston = true;
 
+    public Animator start;
+    public bool startopened = false;
+
+    public Slider volumeslider;
+    public Text volumetext;
+
     public InputField messagefield;
     // Start is called before the first frame update
     void Start()
@@ -18,6 +24,8 @@ public class Events : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        volumetext.text = volumeslider.value.ToString();
+
         if (Input.GetKey(KeyCode.LeftControl) && Input.GetKey(KeyCode.RightControl))
         {
             if (!listanimator.GetBool("Show"))
@@ -82,6 +90,22 @@ public class Events : MonoBehaviour
         {
             Debug.Log("u won!");
             //LOLW
+        }
+
+
+    }
+
+    public void togglestart()
+    {
+        if(startopened == true)
+        {
+            startopened = false;
+            start.SetTrigger("close");
+        }
+        else
+        {
+            startopened = true;
+            start.SetTrigger("open");
         }
 
 
