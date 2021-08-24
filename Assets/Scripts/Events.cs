@@ -35,6 +35,7 @@ public class Events : MonoBehaviour
     void Update()
     {
         volumetext.text = (volumeslider.value * 100).ToString();
+        //asd
 
         if (Input.GetKey(KeyCode.LeftControl) && Input.GetKey(KeyCode.RightControl))
         {
