@@ -24,5 +24,10 @@ public class Events : MonoBehaviour
             listanimator.SetTrigger("off");
         }
 
+        if(Input.GetKey(KeyCode.LeftControl) == false)
+        {
+            listanimator.SetTrigger("off");
+        }
+
     }
 }
