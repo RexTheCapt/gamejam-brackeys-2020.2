@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 [RequireComponent(typeof(AudioSource))]
 public class SpawnAds : MonoBehaviour
@@ -56,8 +57,7 @@ public class SpawnAds : MonoBehaviour
 
             if (SpawnedAds.Count > MaxAds)
             {
-                Debug.LogError("You lose! System got overloaded by ads!");
-                Destroy(gameObject);
+                SceneManager.LoadScene("Loss");
             }
         }
 
