@@ -1028,10 +1028,10 @@ RectTransform:
   - {fileID: 1324862224}
   - {fileID: 71523423}
   - {fileID: 854498136}
-  - {fileID: 1767351315}
   - {fileID: 366851522}
   - {fileID: 878978470}
   - {fileID: 2033923876}
+  - {fileID: 1767351315}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1063,6 +1063,7 @@ MonoBehaviour:
   - {fileID: 8158369917453079063, guid: f959730ae5d4ca442b078caa8da9ee81, type: 3}
   - {fileID: 8158369917453079063, guid: cad96d88d07c80345b77bc5d62f45705, type: 3}
   - {fileID: 8158369917453079063, guid: 9312e95fca573c846b889da0b1ed9ccb, type: 3}
+  - {fileID: 8158369917453079063, guid: 4159278323bf3814a9ea7a0f1498b17d, type: 3}
   SpawnedAds: []
 --- !u!82 &169305249
 AudioSource:
@@ -2584,7 +2585,7 @@ RectTransform:
   - {fileID: 329497038}
   - {fileID: 422100214}
   m_Father: {fileID: 169305247}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -3238,6 +3239,7 @@ MonoBehaviour:
   soundmenu: {fileID: 878978469}
   messagefield: {fileID: 39870819}
   optionswindow: {fileID: 366851521}
+  messagecontent: {fileID: 0}
 --- !u!4 &439581729
 Transform:
   m_ObjectHideFlags: 0
@@ -5209,7 +5211,7 @@ RectTransform:
   - {fileID: 186480308}
   - {fileID: 643948198}
   m_Father: {fileID: 169305247}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -9088,7 +9090,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 169305247}
-  m_RootOrder: 3
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -0.04}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -10849,7 +10851,7 @@ RectTransform:
   - {fileID: 1413486797}
   - {fileID: 869453699}
   m_Father: {fileID: 169305247}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
