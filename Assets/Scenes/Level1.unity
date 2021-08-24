@@ -3264,6 +3264,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 4fc8e8b1c09461341929b26b8e6d1947, type: 3}
   - {fileID: 21300000, guid: 563d5d5700a3645489da02b59a4fb04e, type: 3}
   - {fileID: 21300000, guid: d0f15a1b34b541b418cc1bc6a0adbb94, type: 3}
+  amountofwallpapers: 3
   _wallpaperIndex: 0
 --- !u!114 &438083985
 MonoBehaviour:

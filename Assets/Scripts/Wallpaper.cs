@@ -8,6 +8,8 @@ public class Wallpaper : MonoBehaviour
 {
     public bool ForceUpdateWallPaper = false;
     public Sprite[] WallPapers;
+
+    public int amountofwallpapers;
     public int WallPaperIndex
     {
         get => _wallpaperIndex;
@@ -30,18 +32,38 @@ public class Wallpaper : MonoBehaviour
             UpdateWallPaper();
             ForceUpdateWallPaper = false;
         }
+
+        if (WallPaperIndex > amountofwallpapers)
+        {
+            WallPaperIndex = amountofwallpapers;
+        }
     }
 
     public void addindex()
     {
         WallPaperIndex += 1;
         UpdateWallPaper();
+
+        if (WallPaperIndex > amountofwallpapers)
+        {
+            WallPaperIndex = amountofwallpapers;
+        }
+
+        if (WallPaperIndex < 0)
+        {
+            WallPaperIndex = 0;
+        }
     }
 
     public void subindex()
     {
         WallPaperIndex -= 1;
         UpdateWallPaper();
+
+        if (WallPaperIndex < 0)
+        {
+            WallPaperIndex = 0;
+        }
     }
 
     private void UpdateWallPaper()
