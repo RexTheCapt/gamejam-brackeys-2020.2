@@ -311,6 +311,7 @@ MonoBehaviour:
   _currentTimer: 0
   AdList:
   - {fileID: 8158369917453079063, guid: 9312e95fca573c846b889da0b1ed9ccb, type: 3}
+  - {fileID: 8158369917453079063, guid: 11b750aecb604f243b35202127b2f4f3, type: 3}
   SpawnedAds: []
 --- !u!114 &890025757
 MonoBehaviour:

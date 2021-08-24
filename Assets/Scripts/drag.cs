@@ -22,7 +22,7 @@ public class drag : MonoBehaviour, IDragHandler
 
         Debug.Log(Input.mousePosition.x + " " + Input.mousePosition.y);
 
-        if (dragType == DragType.Normal)
+        if(dragType == DragType.Normal)
         {
             if(Input.mousePosition.x < 1900 && Input.mousePosition.x > 10 && Input.mousePosition.y < 1082 && Input.mousePosition.y > 10)
             {
