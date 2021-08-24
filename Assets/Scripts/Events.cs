@@ -1,11 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Events : MonoBehaviour
 {
     public Animator listanimator;
     public bool cantriggerliston = true;
+
+    public InputField messagefield;
     // Start is called before the first frame update
     void Start()
     {
@@ -24,6 +27,7 @@ public class Events : MonoBehaviour
             }
 
             listanimator.SetBool("Show", true);
+            messagefield.readOnly = true;
         }
         else
         {
@@ -34,6 +38,7 @@ public class Events : MonoBehaviour
             }
 
             listanimator.SetBool("Show", false);
+            messagefield.readOnly = false;
         }
 
         /*
