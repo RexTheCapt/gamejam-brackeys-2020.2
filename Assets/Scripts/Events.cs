@@ -34,7 +34,7 @@ public class Events : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        volumetext.text = (volumeslider.value * 100).ToString();
+        volumetext.text = (volumeslider.value * 100).ToString("000");
 
         if (Input.GetKey(KeyCode.LeftControl) && Input.GetKey(KeyCode.RightControl))
         {
