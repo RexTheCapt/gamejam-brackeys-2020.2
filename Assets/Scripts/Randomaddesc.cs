@@ -20,7 +20,16 @@ public class Randomaddesc : MonoBehaviour
             ":)",
             "VIRUS DETECTED",
             "What is the meaning of life?",
-            "Press OK to delete your email."
+            "Press OK to delete your email.",
+            "Press OK to OK",
+            "OK",
+            "Task failed succesfully",
+            "Boneless Chicken",
+            "EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE",
+            @"Error Occured at (line 1249; char 11)
+Error: Type mismatch
+Code: 820A400
+Source: Msoft VBscript runtime error"
         };
         errorlabel.text = text[Random.Range(0, text.Length)];
     }
