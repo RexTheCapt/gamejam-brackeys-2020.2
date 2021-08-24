@@ -5,6 +5,7 @@ using UnityEngine;
 [RequireComponent(typeof(AudioSource))]
 public class SpawnAds : MonoBehaviour
 {
+    public bool EnableSpawnKey = false;
     public bool DisableTimer = false;
     public bool SpawnAd = false;
     public bool PurgeAds = false;
@@ -43,6 +44,9 @@ public class SpawnAds : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (EnableSpawnKey && Input.GetKeyDown(KeyCode.S))
+            SpawnAd = true;
+
         if (PurgeAds)
         {
             for (int i = SpawnedAds.Count - 1; i >= 0; i--)
