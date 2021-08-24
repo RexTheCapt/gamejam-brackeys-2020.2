@@ -10,23 +10,16 @@ public class Randomaddesc : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        int random = Random.Range(0, 4);
-
-        switch(random)
-        {
-            case 0:
-                errorlabel.text = "System.FormatException";
-                break;
-            case 1:
-                errorlabel.text = "Unable to delete files";
-                break;
-            case 2:
-                //donothing leave default message
-                break;
-            case 3:
-                errorlabel.text = ":)";
-                break;
-        }
+        string[] text = new string[] {
+            "System.FormatException",
+            "Unable to delete files",
+            "",
+            ":)",
+            "VIRUS DETECTED",
+            "What is the meaning of life?",
+            "Press OK to delete your email."
+        };
+        errorlabel.text = text[Random.Range(0, text.Length)];
     }
 
     // Update is called once per frame
