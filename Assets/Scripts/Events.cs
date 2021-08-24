@@ -24,4 +24,15 @@ public class Events : MonoBehaviour
             listanimator.SetBool("Show", false);
         }
     }
+
+
+    public void textchanged()
+    {
+        soundlist snd = GameObject.Find("PlayerEvents").GetComponent<soundlist>();
+        snd.PlaySound("key" + Random.Range(0, 12).ToString());
+        ///.PlaySound("key1");
+
+
+    }
+
 }

@@ -1516,6 +1516,7 @@ GameObject:
   m_Component:
   - component: {fileID: 439581729}
   - component: {fileID: 439581728}
+  - component: {fileID: 439581730}
   m_Layer: 0
   m_Name: PlayerEvents
   m_TagString: Untagged
@@ -1536,6 +1537,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   listanimator: {fileID: 1767351316}
+  cantriggerliston: 1
 --- !u!4 &439581729
 Transform:
   m_ObjectHideFlags: 0
@@ -1550,6 +1552,91 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &439581730
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 439581727}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4371e07c6483954da588f51e87c9192, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - name: key1
+    sound: {fileID: 8300000, guid: fe2805b35919ab24bbf82e64c2b5442c, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 1367646980}
+  - name: key2
+    sound: {fileID: 8300000, guid: 7209201e130c8e44aa306b7396487306, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 1367646980}
+  - name: key3
+    sound: {fileID: 8300000, guid: b494445e740d46e4e8e64e0c92a76cff, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 1367646980}
+  - name: key4
+    sound: {fileID: 8300000, guid: 7d26e11cd008ded42b53b39fcd788a16, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 1367646980}
+  - name: key5
+    sound: {fileID: 8300000, guid: 69f9df6d5b9905d4ca074e176a5e4458, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 1367646980}
+  - name: key6
+    sound: {fileID: 8300000, guid: b008cb68092d3a6439fda505fee2f9cc, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 1367646980}
+  - name: key7
+    sound: {fileID: 8300000, guid: dee973a2c0db9de4694cc81b352e007d, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 1367646980}
+  - name: key8
+    sound: {fileID: 8300000, guid: f315d7357d61d614a8f041e870045ec3, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 1367646980}
+  - name: key9
+    sound: {fileID: 8300000, guid: b105332e78403e94d93398cc678c6a1c, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 1367646980}
+  - name: key10
+    sound: {fileID: 8300000, guid: 2c165c32fd56a664e955575eeeaece78, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 1367646980}
+  - name: key11
+    sound: {fileID: 8300000, guid: 0cd1fdb0ea0161a49b170c037ff1b023, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 1367646980}
+  - name: key12
+    sound: {fileID: 8300000, guid: 2136e24650f8049468a8d331f69317e6, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 1367646980}
 --- !u!1 &458625428
 GameObject:
   m_ObjectHideFlags: 0
@@ -2824,7 +2911,19 @@ MonoBehaviour:
       m_Calls: []
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 439581728}
+        m_TargetAssemblyTypeName: Events, Assembly-CSharp
+        m_MethodName: textchanged
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_OnTouchScreenKeyboardStatusChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -3463,6 +3562,7 @@ GameObject:
   - component: {fileID: 1367646979}
   - component: {fileID: 1367646978}
   - component: {fileID: 1367646977}
+  - component: {fileID: 1367646980}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -3535,6 +3635,102 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &1367646980
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1367646976}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 153
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &1376129868
 GameObject:
   m_ObjectHideFlags: 0
