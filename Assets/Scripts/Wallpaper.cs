@@ -18,6 +18,11 @@ public class Wallpaper : MonoBehaviour
         }
     }
 
+    public void Start()
+    {
+        UpdateWallPaper();
+    }
+
     public void Update()
     {
         if (ForceUpdateWallPaper)
