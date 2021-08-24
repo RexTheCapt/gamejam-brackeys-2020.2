@@ -10,13 +10,15 @@ public class SpawnAds : MonoBehaviour
     public bool SpawnAd = false;
     public bool PurgeAds = false;
 
+    public GameObject AdsParent;
     public float SpawnTimer = 10;
     public float _currentTimer;
+    public int MaxAds = 50;
     public GameObject[] AdList;
 
     public List<GameObject> SpawnedAds = new List<GameObject>();
 
-    private GameObject _midPoint;
+    //private GameObject _midPoint;
     private AudioClip _adCloseAudio;
     private AudioClip _adOpenAudio;
 
@@ -34,16 +36,31 @@ public class SpawnAds : MonoBehaviour
         if (AdList == null || AdList.Length == 0)
             throw new System.Exception("No ads to spawn");
 
-        _midPoint = new GameObject();
-        _midPoint.transform.parent = transform;
-        Instantiate(_midPoint);
-        _midPoint.transform.localPosition = Vector2.zero;
-        _midPoint.name = $"Ads midpoint";
+        //_midPoint = new GameObject();
+        //_midPoint.transform.parent = transform;
+        //Instantiate(_midPoint);
+        //_midPoint.transform.localPosition = Vector2.zero;
+        //_midPoint.name = $"Ads midpoint";
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (SpawnedAds.Count > MaxAds)
+        {
+            for (int i = SpawnedAds.Count - 1; i >= 0; i--)
+            {
+                if (SpawnedAds[i] == null)
+                    SpawnedAds.RemoveAt(i);
+            }
+
+            if (SpawnedAds.Count > MaxAds)
+            {
+                Debug.LogError("You lose! System got overloaded by ads!");
+                Destroy(gameObject);
+            }
+        }
+
         if (EnableSpawnKey && Input.GetKeyDown(KeyCode.S))
             SpawnAd = true;
 
@@ -73,7 +90,7 @@ public class SpawnAds : MonoBehaviour
             GameObject randomAd = AdList[Random.Range(0, AdList.Length)];
             GameObject go = Instantiate(randomAd);
 
-            go.transform.SetParent(_midPoint.transform, false);
+            go.transform.SetParent(AdsParent.transform, false);
             go.transform.localPosition = new Vector3(randomDimention.x, randomDimention.y, 0);
             go.gameObject.GetComponentInChildren<drag>().canvas = canvas;
             go.gameObject.GetComponentInChildren<drag>().transformToMove = go.transform;
