@@ -3239,7 +3239,7 @@ MonoBehaviour:
   soundmenu: {fileID: 878978469}
   messagefield: {fileID: 39870819}
   optionswindow: {fileID: 366851521}
-  messagecontent: {fileID: 0}
+  messagecontent: {fileID: 39870819}
 --- !u!4 &439581729
 Transform:
   m_ObjectHideFlags: 0
