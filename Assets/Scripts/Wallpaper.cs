@@ -31,6 +31,19 @@ public class Wallpaper : MonoBehaviour
             ForceUpdateWallPaper = false;
         }
     }
+
+    public void addindex()
+    {
+        WallPaperIndex += 1;
+        UpdateWallPaper();
+    }
+
+    public void subindex()
+    {
+        WallPaperIndex -= 1;
+        UpdateWallPaper();
+    }
+
     private void UpdateWallPaper()
     {
         gameObject.GetComponent<Image>().sprite = WallPapers[_wallpaperIndex];
