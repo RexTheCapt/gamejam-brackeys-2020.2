@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class PaperTexts : MonoBehaviour
 {
-    public Level CurrentLevel
+    public int CurrentLevel
     {
         get => _currentLevel;
         set
@@ -15,18 +15,18 @@ public class PaperTexts : MonoBehaviour
             UpdateText();
         }
     }
+    [SerializeField]
+    private int _currentLevel = 0;
     public bool ForceUpdateText;
     [SerializeField]
     public TextData[] TextDatas = new TextData[0];
-    
-    private Level _currentLevel = Level.L0;
 
     private void UpdateText()
     {
         Text text = gameObject.GetComponentInChildren<Text>();
         
-        text.text = TextDatas[((int)_currentLevel)].Text;
-        text.fontSize = TextDatas[((int)_currentLevel)].FontSize;
+        text.text = TextDatas[_currentLevel % TextDatas.Length].Text;
+        text.fontSize = TextDatas[_currentLevel % TextDatas.Length].FontSize;
     }
 
     // Start is called before the first frame update
@@ -43,11 +43,6 @@ public class PaperTexts : MonoBehaviour
             UpdateText();
             ForceUpdateText = false;
         }
-    }
-
-    public enum Level
-    {
-        L0 = 0
     }
 
     [Serializable]
