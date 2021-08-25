@@ -105,11 +105,15 @@ public class Events : MonoBehaviour
         {
             clockanimator.SetTrigger("openclock");
             isclockon = true;
+            soundlist snd = GameObject.Find("PlayerEvents").GetComponent<soundlist>();
+            snd.PlaySound("opentask");
         }
         else if (isclockon == true)
         {
             clockanimator.SetTrigger("closeclock");
             isclockon = false;
+            soundlist snd = GameObject.Find("PlayerEvents").GetComponent<soundlist>();
+            snd.PlaySound("closetask");
         }
     }
 
@@ -118,10 +122,14 @@ public class Events : MonoBehaviour
         if(openit == true)
         {
             textfile01.SetActive(true);
+            soundlist snd = GameObject.Find("PlayerEvents").GetComponent<soundlist>();
+            snd.PlaySound("opentask");
         }
         else
         {
             textfile01.SetActive(false);
+            soundlist snd = GameObject.Find("PlayerEvents").GetComponent<soundlist>();
+            snd.PlaySound("closetask");
         }
 
     }
@@ -131,10 +139,14 @@ public class Events : MonoBehaviour
         if (openit == true)
         {
             textfile02.SetActive(true);
+            soundlist snd = GameObject.Find("PlayerEvents").GetComponent<soundlist>();
+            snd.PlaySound("opentask");
         }
         else
         {
             textfile02.SetActive(false);
+            soundlist snd = GameObject.Find("PlayerEvents").GetComponent<soundlist>();
+            snd.PlaySound("closetask");
         }
 
     }
@@ -142,11 +154,15 @@ public class Events : MonoBehaviour
     public void showfileexplorer()
     {
         fileexplorerwindow.SetActive(true);
+        soundlist snd = GameObject.Find("PlayerEvents").GetComponent<soundlist>();
+        snd.PlaySound("opentask");
     }
 
     public void hidefileexplorer()
     {
         fileexplorerwindow.SetActive(false);
+        soundlist snd = GameObject.Find("PlayerEvents").GetComponent<soundlist>();
+        snd.PlaySound("closetask");
     }
 
     public void clearattachments()
@@ -184,11 +200,15 @@ public class Events : MonoBehaviour
     public void optionsshow()
     {
         optionswindow.SetActive(true);
+        soundlist snd = GameObject.Find("PlayerEvents").GetComponent<soundlist>();
+        snd.PlaySound("opentask");
     }
 
     public void optionshide()
     {
         optionswindow.SetActive(false);
+        soundlist snd = GameObject.Find("PlayerEvents").GetComponent<soundlist>();
+        snd.PlaySound("closetask");
     }
 
 
