@@ -71,7 +71,7 @@ public class SpawnAds : MonoBehaviour
             PurgeAds = false;
         }
 
-        System.DateTime start = System.DateTime.Now;
+        //System.DateTime start = System.DateTime.Now;
         while ((_currentTimer > SpawnTimer && !DisableTimer) || SpawnAd)
         {
             Canvas canvas = gameObject.GetComponent<Canvas>();
@@ -99,13 +99,13 @@ public class SpawnAds : MonoBehaviour
 
             SpawnAd = false;
 
-            if (start.AddMilliseconds(10) < System.DateTime.Now)
-            {
-                Debug.LogWarning("Used more than one second on spawning popups!");
-                PurgeAds = true;
-                _currentTimer = 0;
-                break;
-            }
+            //if (start.AddMilliseconds(10) < System.DateTime.Now)
+            //{
+            //    Debug.LogWarning("Used more than one second on spawning popups!");
+            //    PurgeAds = true;
+            //    _currentTimer = 0;
+            //    break;
+            //}
         }
         //Debug.Log($"Used {(System.DateTime.Now) - start} seconds to spawn ads");
 
