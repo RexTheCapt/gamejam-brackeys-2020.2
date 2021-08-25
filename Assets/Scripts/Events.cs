@@ -101,6 +101,8 @@ public class Events : MonoBehaviour
         }
     }
 
+    
+
     public void deletemessagecontent()
     {
         messagecontent.text = "";

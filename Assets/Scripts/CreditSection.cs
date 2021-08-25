@@ -1,4 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -16,7 +19,11 @@ public class CreditSection : MonoBehaviour
     {
         SubTexts = transform.GetComponentsInChildren<Text>();
         SetAlpha(0f);
+
+        //StartCoroutine(startdelay());
     }
+
+    
 
     void Update() 
     {
@@ -26,6 +33,14 @@ public class CreditSection : MonoBehaviour
             gameObject.SetActive(false);
         } else 
             SetAlpha(GetAlpha());
+    }
+
+    public IEnumerator startdelay()
+    {
+        yield return new WaitForSecondsRealtime(1.8f);
+        //this is Start() but delayed
+        SubTexts = transform.GetComponentsInChildren<Text>();
+        SetAlpha(0f);
     }
 
     public void StartShowing(AnimationCurve alphaCurve)
@@ -39,6 +54,8 @@ public class CreditSection : MonoBehaviour
 
         gameObject.SetActive(true);
     }
+
+    
 
     public bool FinishedRunning()
     {
