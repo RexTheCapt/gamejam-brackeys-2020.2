@@ -476,8 +476,8 @@ RectTransform:
   m_Children:
   - {fileID: 895437320}
   - {fileID: 556196350}
-  - {fileID: 641408561}
   - {fileID: 698468996}
+  - {fileID: 641408561}
   m_Father: {fileID: 169305247}
   m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1563,7 +1563,7 @@ MonoBehaviour:
   DisableTimer: 0
   SpawnAd: 0
   PurgeAds: 0
-  ComputerHealth: {fileID: 641408560}
+  ComputerHealth: {fileID: 0}
   AdsParent: {fileID: 708055348}
   SpawnTimer: 5
   _currentTimer: 0
@@ -6918,11 +6918,11 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 59207500}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 5, y: 154}
+  m_AnchoredPosition: {x: -3, y: 139}
   m_SizeDelta: {x: 162.5346, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!225 &641408562
@@ -6950,7 +6950,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.025370955, g: 1, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -6970,7 +6970,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: 'pc''s life: ok'
+  m_Text: pc's life
 --- !u!222 &641408564
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -7595,7 +7595,7 @@ RectTransform:
   m_Children:
   - {fileID: 1415224597}
   m_Father: {fileID: 59207500}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -9430,7 +9430,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 8, y: 198}
+  m_AnchoredPosition: {x: 8, y: 223}
   m_SizeDelta: {x: 162.5346, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!225 &895437321
@@ -16545,7 +16545,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: AGREEMENT_FOR_BOSS.TXT
+  m_Text: CREDITCARDDETAILS.TXT
 --- !u!222 &1782207046
 CanvasRenderer:
   m_ObjectHideFlags: 0
