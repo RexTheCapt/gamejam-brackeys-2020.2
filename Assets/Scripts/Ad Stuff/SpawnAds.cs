@@ -109,12 +109,31 @@ public class SpawnAds : MonoBehaviour
         }
         //Debug.Log($"Used {(System.DateTime.Now) - start} seconds to spawn ads");
 
-        Image chi = ComputerHealth.GetComponent<Image>();
-
+        #region PC Health stuff
         float adPercent = (float)SpawnedAds.Count / MaxAds;
-        //Debug.Log($"Adpercent: {adPercent}");
+        Text healthText = ComputerHealth.GetComponent<Text>();
 
-        chi.color = new Color(1, 1 - adPercent, 1 - adPercent);
+        if (adPercent < .2f)
+        {
+            healthText.text = "PC Life: OK";
+            healthText.color = new Color(0, 0, 1);
+        }
+        else if (adPercent < .4f)
+        {
+            healthText.text = "PC Life: Mostly OK";
+            healthText.color = new Color(0, 1, 0);
+        }
+        else if (adPercent < .6f)
+        {
+            healthText.text = "PC Life: Not OK";
+            healthText.color = new Color(1, 1, 0);
+        }
+        else if (adPercent < .8f)
+        {
+            healthText.text = "PC Life: HELP ME!!!";
+            healthText.color = new Color(1, 0, 0);
+        }
+        #endregion
 
         if (SpawnedAds.Count > MaxAds)
             SceneManager.LoadScene("loss");
