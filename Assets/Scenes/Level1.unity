@@ -1460,6 +1460,7 @@ MonoBehaviour:
   - {fileID: 8158369917453079063, guid: cad96d88d07c80345b77bc5d62f45705, type: 3}
   - {fileID: 8158369917453079063, guid: 9312e95fca573c846b889da0b1ed9ccb, type: 3}
   - {fileID: 8158369917453079063, guid: 4159278323bf3814a9ea7a0f1498b17d, type: 3}
+  - {fileID: 8158369917453079063, guid: 583e43d65e43da747af6d9778a294d7b, type: 3}
   SpawnedAds: []
 --- !u!82 &169305249
 AudioSource:
@@ -3304,9 +3305,9 @@ MonoBehaviour:
   m_Text: "by singning you accept that you will \ngive your workers 50%+\n more of
     their paymentby\n singning you accept that you will \ngive your workers 50%+
     more of their \npaymentby singning you accept that you will give your \nworkers
-    50%+ more of thei\nby singning you accept that you will \ngive your workers 50%+\n
-    more of their paymentby\n singning you accept that you will \ngive your workers
-    50%+ more of their \npaymentby singning you accept that you will give your \nworkers
+    50%+ more of thei\nby singning you accept that you will \ngive your workers 50%+\nmore
+    of their paymentby\n singning you accept that you will \ngive your workers 50%+
+    more of their \npaymentby singning you accept that you will give your \nworkers
     50%+ more of thei\nr paymentby singning you accept that you will give \nr paymentby
     singning you accept that you will give your workers 50%+ more of their paymentby
     \nsingning you accept that y\nou will give your workers 50%+\n more of their
