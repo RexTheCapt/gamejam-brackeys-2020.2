@@ -11,6 +11,7 @@ public class SpawnAds : MonoBehaviour
     public bool SpawnAd = false;
     public bool PurgeAds = false;
 
+    public GameObject ComputerHealth;
     public GameObject AdsParent;
     public float SpawnTimer = 10;
     public float _currentTimer;
