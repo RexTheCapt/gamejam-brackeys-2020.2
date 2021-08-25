@@ -6,21 +6,14 @@ using UnityEngine.UI;
 public class Randomaddesc : MonoBehaviour
 {
     public Text errorlabel;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-
-        //random dialogbox messages :D
-
-        string[] text = new string[] {
+    [TextArea]
+    public string[] text = new string[] {
             "System.FormatException",
             "Unable to delete files",
             "",
             ":)",
             "VIRUS DETECTED",
             "What is the meaning of life?",
-            "Press OK to delete your email.",
             "Press OK to OK",
             "OK",
             "Task failed succesfully",
@@ -31,6 +24,14 @@ Error: Type mismatch
 Code: 820A400
 Source: Msoft VBscript runtime error"
         };
+
+    // Start is called before the first frame update
+    void Start()
+    {
+
+        //random dialogbox messages :D
+
+        
         errorlabel.text = text[Random.Range(0, text.Length)];
     }
 
