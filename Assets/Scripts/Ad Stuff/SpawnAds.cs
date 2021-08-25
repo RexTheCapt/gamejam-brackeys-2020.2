@@ -2,6 +2,7 @@ using System.Collections.Generic;
 
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 [RequireComponent(typeof(AudioSource))]
 public class SpawnAds : MonoBehaviour
@@ -48,18 +49,10 @@ public class SpawnAds : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (SpawnedAds.Count > MaxAds)
+        for (int i = SpawnedAds.Count - 1; i >= 0; i--)
         {
-            for (int i = SpawnedAds.Count - 1; i >= 0; i--)
-            {
-                if (SpawnedAds[i] == null)
-                    SpawnedAds.RemoveAt(i);
-            }
-
-            if (SpawnedAds.Count > MaxAds)
-            {
-                SceneManager.LoadScene("Loss");
-            }
+            if (SpawnedAds[i] == null)
+                SpawnedAds.RemoveAt(i);
         }
 
         if (EnableSpawnKey && Input.GetKeyDown(KeyCode.S))
@@ -78,7 +71,8 @@ public class SpawnAds : MonoBehaviour
             PurgeAds = false;
         }
 
-        if ((_currentTimer > SpawnTimer && !DisableTimer) || SpawnAd)
+        System.DateTime start = System.DateTime.Now;
+        while ((_currentTimer > SpawnTimer && !DisableTimer) || SpawnAd)
         {
             Canvas canvas = gameObject.GetComponent<Canvas>();
             var spawnBounds = canvas.pixelRect;
@@ -104,7 +98,26 @@ public class SpawnAds : MonoBehaviour
                 _currentTimer -= SpawnTimer;
 
             SpawnAd = false;
+
+            if (start.AddMilliseconds(10) < System.DateTime.Now)
+            {
+                Debug.LogWarning("Used more than one second on spawning popups!");
+                PurgeAds = true;
+                _currentTimer = 0;
+                break;
+            }
         }
+        //Debug.Log($"Used {(System.DateTime.Now) - start} seconds to spawn ads");
+
+        Image chi = ComputerHealth.GetComponent<Image>();
+
+        float adPercent = (float)SpawnedAds.Count / MaxAds;
+        //Debug.Log($"Adpercent: {adPercent}");
+
+        chi.color = new Color(1, 1 - adPercent, 1 - adPercent);
+
+        if (SpawnedAds.Count > MaxAds)
+            SceneManager.LoadScene("loss");
     }
 
     public void PlayAdCloseSound()
