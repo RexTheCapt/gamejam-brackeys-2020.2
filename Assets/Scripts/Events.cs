@@ -237,7 +237,7 @@ public class Events : MonoBehaviour
         else
         {
             
-            string messagetypedin = messagefield.text.ToString();
+            string messagetypedin = messagefield.text.ToString().Replace("\n", " ");
             string compareText = "Dear Customer's Hell Inc, I wish to complain about your product that I purchased on 29/08/2021. I am complaining because it is malfunctioning. To resolve this problem I would like you to pay me back the amount of 10 dollars. I look forward to hearing from you as soon as possible. Sincerely, Your Customer";
             double percentage = StringCompare(messagetypedin, compareText);
 
