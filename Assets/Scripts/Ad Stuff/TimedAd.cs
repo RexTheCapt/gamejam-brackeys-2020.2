@@ -22,7 +22,6 @@ public class TimedAd : MonoBehaviour
         //if (TimeLeft < 0)
         {
             gameObject.GetComponent<CloseAd>().spawner.GetComponent<SpawnAds>()._currentTimer += Time.deltaTime;
-            TextToUpdate.text = $"Im spawning more ads :D";
         }
         //else
         //{

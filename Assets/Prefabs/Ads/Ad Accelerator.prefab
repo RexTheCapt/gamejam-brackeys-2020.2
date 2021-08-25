@@ -34,8 +34,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -106.49927, y: 73.4}
-  m_SizeDelta: {x: 107.0014, y: 30}
+  m_AnchoredPosition: {x: -102.22528, y: 73.4}
+  m_SizeDelta: {x: 115.5494, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2984258742693814022
 CanvasRenderer:
@@ -78,7 +78,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Ad Spawner
+  m_Text: Time Accelerator
 --- !u!1 &5326188864628183502
 GameObject:
   m_ObjectHideFlags: 0
@@ -463,7 +463,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Press OK For More Ads
+  m_Text: 'Im boosting the ad spawn
+
+    timer :D'
 --- !u!1 &8158369917453079063
 GameObject:
   m_ObjectHideFlags: 0
@@ -476,7 +478,7 @@ GameObject:
   - component: {fileID: 8158369917453079061}
   - component: {fileID: 1843822629443661825}
   m_Layer: 5
-  m_Name: Ad Timed
+  m_Name: Ad Accelerator
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
