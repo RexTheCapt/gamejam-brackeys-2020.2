@@ -1576,6 +1576,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 169305247}
     m_Modifications:
+    - target: {fileID: 1919459925468213202, guid: 11b750aecb604f243b35202127b2f4f3, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1919459925468213202, guid: 11b750aecb604f243b35202127b2f4f3, type: 3}
+      propertyPath: m_Color.b
+      value: 0.8679245
+      objectReference: {fileID: 0}
+    - target: {fileID: 1919459925468213202, guid: 11b750aecb604f243b35202127b2f4f3, type: 3}
+      propertyPath: m_Color.g
+      value: 0.8679245
+      objectReference: {fileID: 0}
+    - target: {fileID: 1919459925468213202, guid: 11b750aecb604f243b35202127b2f4f3, type: 3}
+      propertyPath: m_Color.r
+      value: 0.8679245
+      objectReference: {fileID: 0}
     - target: {fileID: 2312094596226156385, guid: 11b750aecb604f243b35202127b2f4f3, type: 3}
       propertyPath: m_Text
       value: The Only Useful Popup
