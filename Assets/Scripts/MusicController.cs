@@ -153,7 +153,18 @@ public class MusicController : MonoBehaviour
         //soundlist snd2 = GameObject.Find("PlayerEvents").GetComponent<soundlist>();
         //snd2.PlaySound("stop");
 
-        snd.PlaySound(musicname.ToString());
+        
+
+        if(musicname == 1)
+        {
+            sound.PlaySound("stop");
+            sound.PlaySound("1");
+        }
+        else
+        {
+            snd.PlaySound(musicname.ToString());
+        }
+
     }
 
     public void NextMusic()
