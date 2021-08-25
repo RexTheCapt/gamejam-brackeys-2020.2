@@ -25,6 +25,8 @@ public class Events : MonoBehaviour
     public GameObject optionswindow;
 
     public InputField messagecontent;
+
+    public GameObject musicplayer;
     // Start is called before the first frame update
     void Start()
     {
@@ -32,6 +34,8 @@ public class Events : MonoBehaviour
         ///
         startmenu.SetActive(true);
         soundmenu.SetActive(true);
+
+        musicplayer.SetActive(true);
     }
 
     // Update is called once per frame

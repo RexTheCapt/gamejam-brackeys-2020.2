@@ -4003,6 +4003,7 @@ MonoBehaviour:
   messagefield: {fileID: 39870819}
   optionswindow: {fileID: 366851521}
   messagecontent: {fileID: 39870819}
+  musicplayer: {fileID: 1406660884}
   loggedin: {fileID: 2066887715}
   logindetail: {fileID: 2101069398}
   timestriedtosendempty: 0
@@ -9202,7 +9203,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -18.001953, y: 0}
+  m_AnchoredPosition: {x: 59, y: 70}
   m_SizeDelta: {x: -1042.9323, y: -650.4277}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1324862225

@@ -245,6 +245,8 @@ public class MusicController : MonoBehaviour
         //need to be called 2 times
         NextMusic();
         NextMusic();
+
+        
     }
 
     private void Awake()
