@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -21,10 +22,10 @@ public class Events : MonoBehaviour
     public GameObject startmenu;
     public GameObject soundmenu;
 
-    public InputField messagefield;
+    public TMP_InputField messagefield;
     public GameObject optionswindow;
 
-    public InputField messagecontent;
+    public TMP_InputField messagecontent;
 
     public GameObject musicplayer;
 
