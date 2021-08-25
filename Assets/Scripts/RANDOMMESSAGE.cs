@@ -18,7 +18,7 @@ public class RANDOMMESSAGE : MonoBehaviour
         messagetexts.Add("SAMPLE TEXT");
         messagetexts.Add("I SHOULD HAVE WRITTEN A LETTER");
         messagetexts.Add("CAN U TYPE?");
-        messagetexts.Add("THEY DID NOT WRITE BACK :(");
+        messagetexts.Add("THEY DIDN'T REPLIED :(");
         messagetexts.Add("TRY YOUR BEST");
         messagetexts.Add("MAYBE TRY DOWNLOADING AN ANTIVIRUS?");
         messagetexts.Add("THAT EXPLAINS WHY NOBODY USED IT");
