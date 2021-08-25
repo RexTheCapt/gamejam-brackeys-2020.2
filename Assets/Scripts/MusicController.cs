@@ -235,11 +235,16 @@ public class MusicController : MonoBehaviour
             s.source.Stop();
         }
 
-        soundlist snd21 = GameObject.Find("PlayerEvents").GetComponent<soundlist>();
+        //soundlist snd21 = GameObject.Find("PlayerEvents").GetComponent<soundlist>();
         //snd.PlaySound("3");
 
-        snd21.PlaySound("stop");
-        snd21.PlaySound("1");
+        //snd21.PlaySound("stop");
+        //snd21.PlaySound("1");
+
+
+        //need to be called 2 times
+        NextMusic();
+        NextMusic();
     }
 
     private void Awake()
