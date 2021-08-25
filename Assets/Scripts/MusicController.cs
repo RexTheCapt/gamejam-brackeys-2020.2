@@ -84,14 +84,75 @@ public class MusicController : MonoBehaviour
         soundlist snd = GameObject.Find("PlayerEvents").GetComponent<soundlist>();
         snd.music.Stop();
 
+        soundlist snd2 = GameObject.Find("PlayerEvents").GetComponent<soundlist>();
+        snd2.PlaySound("stop");
+
+        Destroy(GetComponent<AudioSource>());
+        if (GetComponent<AudioSource>() == null)
+        {
+            Debug.Log("DELETED ALL AUDIOSOURCES");
+        }
+        else
+        {
+            Debug.LogError("OH NO");
+        }
+        gameObject.AddComponent<AudioSource>();
+        soundlist sound = GameObject.Find("PlayerEvents").GetComponent<soundlist>();
+        if(musicname == 1)
+        {
+            sound.Refreshmusic(2);
+        }
+        else if (musicname == 2)
+        {
+            sound.Refreshmusic(1);
+        }
+
+        //snd.StopSound();
+
+        if (GetComponent<AudioSource>() != null)
+        {
+            //snd.StopSound();
+        }
+
+        //soundlist snd24 = GameObject.Find("PlayerEvents").GetComponent<soundlist>();
+        //snd24.music.Stop();
+
         UpdateInfo();
     }
 
     public void PlayMusic()
     {
         soundlist snd = GameObject.Find("PlayerEvents").GetComponent<soundlist>();
-        snd.music.Stop();
-        
+        //snd.music.Stop();
+
+        if (GetComponent<AudioSource>() != null)
+        {
+            //snd.StopSound();
+        }
+
+        Destroy(GetComponent<AudioSource>());
+        if (GetComponent<AudioSource>() == null)
+        {
+            Debug.Log("DELETED ALL AUDIOSOURCES");
+        }
+        else
+        {
+            Debug.LogError("OH NO");
+        }
+        gameObject.AddComponent<AudioSource>();
+        soundlist sound = GameObject.Find("PlayerEvents").GetComponent<soundlist>();
+        if (musicname == 1)
+        {
+            sound.Refreshmusic(2);
+        }
+        else if (musicname == 2)
+        {
+            sound.Refreshmusic(1);
+        }
+
+        //soundlist snd2 = GameObject.Find("PlayerEvents").GetComponent<soundlist>();
+        //snd2.PlaySound("stop");
+
         snd.PlaySound(musicname.ToString());
     }
 
@@ -105,7 +166,35 @@ public class MusicController : MonoBehaviour
         soundlist snd = GameObject.Find("PlayerEvents").GetComponent<soundlist>();
         snd.music.Stop();
 
-        if (musicname != musiccount)
+        if (GetComponent<AudioSource>() != null)
+        {
+            //snd.StopSound();
+        }
+
+        Destroy(GetComponent<AudioSource>());
+        if (GetComponent<AudioSource>() == null)
+        {
+            Debug.Log("DELETED ALL AUDIOSOURCES");
+        }
+        else
+        {
+            Debug.LogError("OH NO");
+        }
+        gameObject.AddComponent<AudioSource>();
+        soundlist sound = GameObject.Find("PlayerEvents").GetComponent<soundlist>();
+        if (musicname == 1)
+        {
+            sound.Refreshmusic(2);
+        }
+        else if (musicname == 2)
+        {
+            sound.Refreshmusic(1);
+        }
+
+        //soundlist snd2 = GameObject.Find("PlayerEvents").GetComponent<soundlist>();
+        //snd2.PlaySound("stop");
+
+        if (musicname != (musiccount))
         {
             musicname += 1;
         }
@@ -114,11 +203,17 @@ public class MusicController : MonoBehaviour
             musicname = 1;
         }
 
-        audioSource.Stop();
+        //audioSource.Stop();
         if(autoplay.isOn == true)
         {
-            soundlist snd2 = GameObject.Find("PlayerEvents").GetComponent<soundlist>();
-            snd2.PlaySound(musicname.ToString());
+            soundlist snd21 = GameObject.Find("PlayerEvents").GetComponent<soundlist>();
+            snd21.PlaySound(musicname.ToString());
+
+            if(musicname == 1)
+            {
+                snd21.PlaySound("stop");
+                snd21.PlaySound("1");
+            }
         }
 
         UpdateInfo();
@@ -151,8 +246,18 @@ public class MusicController : MonoBehaviour
             s.source.Stop();
         }
 
+        //soundlist snd = GameObject.Find("PlayerEvents").GetComponent<soundlist>();
+        //snd.PlaySound("3");
+
         soundlist snd = GameObject.Find("PlayerEvents").GetComponent<soundlist>();
-        snd.PlaySound("3");
+        //snd.music.Stop();
+
+        if (GetComponent<Rigidbody>() != null)
+        {
+            snd.StopSound();
+        }
+
+        snd.PlaySound(musicname.ToString());
     }
 
 

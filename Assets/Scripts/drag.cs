@@ -12,7 +12,7 @@ public class drag : MonoBehaviour, IDragHandler
     
     [Header("Other stuff")]
     [SerializeField] private RectTransform dragRectTransform;
-    public Canvas canvas = null;
+    public Canvas canvas;
 
     public Collider2D screenbounds;
 
