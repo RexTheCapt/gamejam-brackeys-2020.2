@@ -59,7 +59,17 @@ public class soundlist : MonoBehaviour
     {
         foreach (Sounds s in sounds)
         {
-            s.source.volume = SFXSlider.value * MASTER.value;
+            
+
+            if (s.name == "1" || s.name == "2" || s.name == "3")
+            {
+                s.source.volume = MUSICSlider.value * MASTER.value;
+            }
+            else
+            {
+                s.source.volume = SFXSlider.value * MASTER.value;
+            }
+
         }
 
         music.volume = MUSICSlider.value * MASTER.value;

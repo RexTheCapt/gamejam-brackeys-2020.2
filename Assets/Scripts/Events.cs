@@ -32,6 +32,10 @@ public class Events : MonoBehaviour
     public GameObject fileexplorerwindow;
     public GameObject textfile01;
     public GameObject textfile02;
+
+    public bool isclockon = false;
+    public Animator clockanimator;
+    public GameObject clock;
     // Start is called before the first frame update
     void Start()
     {
@@ -41,6 +45,7 @@ public class Events : MonoBehaviour
         soundmenu.SetActive(true);
 
         musicplayer.SetActive(true);
+        clock.SetActive(true);
     }
 
     // Update is called once per frame
@@ -92,6 +97,20 @@ public class Events : MonoBehaviour
 
 
 
+    }
+
+    public void toggleclock()
+    {
+        if(isclockon == false)
+        {
+            clockanimator.SetTrigger("openclock");
+            isclockon = true;
+        }
+        else if (isclockon == true)
+        {
+            clockanimator.SetTrigger("closeclock");
+            isclockon = false;
+        }
     }
 
     public void textfile1(bool openit)
