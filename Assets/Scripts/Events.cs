@@ -85,6 +85,15 @@ public class Events : MonoBehaviour
 
     }
 
+    public Text loggedin;
+    public InputField logindetail;
+
+    public void LOGIN()
+    {
+        loggedin.text = ("Logged In As " + logindetail.text);
+        logindetail.text = "";
+    }
+
     public void deletemessagecontent()
     {
         messagecontent.text = "";
