@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
@@ -39,8 +40,6 @@ public class Events : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        ///StartCoroutine(refresh());
-        
         startmenu.SetActive(true);
         soundmenu.SetActive(true);
 
@@ -51,7 +50,8 @@ public class Events : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        StartCoroutine(MoveTextEnd_NextFrame());
+        messagefield.selectionAnchorPosition = messagefield.caretPosition;
+        messagefield.selectionFocusPosition = messagefield.caretPosition;
 
         volumetext.text = (volumeslider.value * 100).ToString("000");
         //asd
@@ -78,25 +78,6 @@ public class Events : MonoBehaviour
             listanimator.SetBool("Show", false);
             messagefield.readOnly = false;
         }
-
-        /*
-        if(Input.GetKey(KeyCode.LeftControl) == false && Input.GetKeyUp(KeyCode.RightControl) || Input.GetKey(KeyCode.RightControl) == false && Input.GetKeyUp(KeyCode.LeftControl))
-        {
-            soundlist snd = GameObject.Find("PlayerEvents").GetComponent<soundlist>();
-            snd.PlaySound("paperclose");
-        }
-        */
-
-        //if(Input.GetKeyUp(KeyCode.LeftControl) || Input.GetKeyUp(KeyCode.RightControl))
-        //{
-        //}
-
-        //if (Input.GetKey(KeyCode.LeftControl) == true && Input.GetKeyDown(KeyCode.RightControl) || Input.GetKey(KeyCode.RightControl) == true && Input.GetKeyDown(KeyCode.LeftControl))
-        //{
-        //}
-
-
-
     }
 
     public void toggleclock()
@@ -173,9 +154,7 @@ public class Events : MonoBehaviour
             logindetail.text = "";
         }
     }
-
     
-
     public void deletemessagecontent()
     {
         messagecontent.text = "";
@@ -190,28 +169,18 @@ public class Events : MonoBehaviour
     {
         optionswindow.SetActive(false);
     }
-
-
+    
     public void textchanged()
     {
         soundlist snd = GameObject.Find("PlayerEvents").GetComponent<soundlist>();
         snd.PlaySound("key" + Random.Range(0, 12).ToString());
         ///.PlaySound("key1");
-
-        StartCoroutine(MoveTextEnd_NextFrame());
-    }
-
-    IEnumerator MoveTextEnd_NextFrame()
-    {
-        yield return 0; // Skip the first frame in which this is called.
-        messagecontent.MoveTextEnd(false); // Do this during the next frame.
     }
 
     public void SendFinalMessage()
     {
         if(messagefield.text == "Your Message..." || messagefield.text == "" || messagefield.text == " " || messagefield.text == "sure want to send empty message?" || messagefield.text == "are you REALLY sure want to send empty message??" || messagefield.text == "okay, i warned u. Try one more time")
         {
-            
             timestriedtosendempty += 1;
 
             if(timestriedtosendempty == 1)
