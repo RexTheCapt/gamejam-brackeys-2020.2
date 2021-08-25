@@ -27,11 +27,16 @@ public class Events : MonoBehaviour
     public InputField messagecontent;
 
     public GameObject musicplayer;
+
+    public InputField attachinputfield;
+    public GameObject fileexplorerwindow;
+    public GameObject textfile01;
+    public GameObject textfile02;
     // Start is called before the first frame update
     void Start()
     {
         ///StartCoroutine(refresh());
-        ///
+        
         startmenu.SetActive(true);
         soundmenu.SetActive(true);
 
@@ -87,6 +92,51 @@ public class Events : MonoBehaviour
 
 
 
+    }
+
+    public void textfile1(bool openit)
+    {
+        if(openit == true)
+        {
+            textfile01.SetActive(true);
+        }
+        else
+        {
+            textfile01.SetActive(false);
+        }
+
+    }
+
+    public void textfile2(bool openit)
+    {
+        if (openit == true)
+        {
+            textfile02.SetActive(true);
+        }
+        else
+        {
+            textfile02.SetActive(false);
+        }
+
+    }
+
+    public void showfileexplorer()
+    {
+        fileexplorerwindow.SetActive(true);
+    }
+
+    public void hidefileexplorer()
+    {
+        fileexplorerwindow.SetActive(false);
+    }
+
+    public void clearattachments()
+    {
+        attachinputfield.text = "";
+    }
+    public void addattacmant(string file)
+    {
+        attachinputfield.text += (" " + file + " ");
     }
 
     public Text loggedin;

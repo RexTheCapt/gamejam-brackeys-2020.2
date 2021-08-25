@@ -33,35 +33,16 @@ public class MusicController : MonoBehaviour
 
     public void PauseMusic()
     {
-        /*
         if(ispaused == true)
         {
-            foreach (Sounds s in sounds)
-            {
-                if (s.name == musicname.ToString())
-                {
-                    s.source.UnPause();
-                }
-            }
-
+            GetComponent<AudioSource>().UnPause();
             pausetext.text = "PAUSE";
         }
-        else if(ispaused == false)
+        else if (ispaused == false)
         {
-            foreach (Sounds s in sounds)
-            {
-                if (s.name == musicname.ToString())
-                {
-                    s.source.Pause();
-                }
-            }
-
+            GetComponent<AudioSource>().Pause();
             pausetext.text = "UNPAUSE";
         }
-
-        UpdateInfo();
-
-        */
 
     }
 
