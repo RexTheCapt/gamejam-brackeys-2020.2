@@ -1549,8 +1549,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dad29158bfb10dd4b8ad7959545cdbe7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  EnableSpawnKey: 0
-  DisableTimer: 0
+  EnableSpawnKey: 1
+  DisableTimer: 1
   SpawnAd: 0
   PurgeAds: 0
   ComputerHealth: {fileID: 641408560}
