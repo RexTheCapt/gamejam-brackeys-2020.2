@@ -88,10 +88,17 @@ public class Events : MonoBehaviour
     public Text loggedin;
     public InputField logindetail;
 
+    public int timestriedtosendempty;
+
     public void LOGIN()
     {
-        loggedin.text = ("Logged In As " + logindetail.text);
-        logindetail.text = "";
+        //currently this have no fuction
+
+        if(logindetail.text != "")
+        {
+            loggedin.text = ("Logged In As " + logindetail.text);
+            logindetail.text = "";
+        }
     }
 
     public void deletemessagecontent()
@@ -127,18 +134,49 @@ public class Events : MonoBehaviour
 
     public void SendFinalMessage()
     {
-        string messagetypedin = messagefield.text.ToString();
-        string compareText = "Dear Customer's Hell Inc, I wish to complain about your product that I purchased on 29/08/2021. I am complaining because it is malfunctioning. To resolve this problem I would like you to pay me back the amount of 10 dollars. I look forward to hearing from you as soon as possible. Sincerely, Your Customer";
-        double percentage = StringCompare(messagetypedin, compareText);
-        
-        if (percentage < 90)
+        if(messagefield.text == "Your Message..." || messagefield.text == "" || messagefield.text == " " || messagefield.text == "sure want to send empty message?" || messagefield.text == "are you REALLY sure want to send empty message??" || messagefield.text == "okay, i warned u. Try one more time")
         {
-            SceneManager.LoadScene("Loss");
+            
+            timestriedtosendempty += 1;
+
+            if(timestriedtosendempty == 1)
+            {
+                messagefield.text = "sure want to send empty message?";
+            }
+
+            if(timestriedtosendempty == 3)
+            {
+                messagefield.text = "are you REALLY sure want to send empty message??";
+            }
+            else if(timestriedtosendempty == 5)
+            {
+                messagefield.text = "okay, i warned u. Try one more time";
+            }
+            else if (timestriedtosendempty == 6)
+            {
+                messagefield.text = "U LOST";
+                timestriedtosendempty = 0;
+                SendFinalMessage();
+            }
         }
         else
         {
-            SceneManager.LoadScene("Win");
+            
+            string messagetypedin = messagefield.text.ToString();
+            string compareText = "Dear Customer's Hell Inc, I wish to complain about your product that I purchased on 29/08/2021. I am complaining because it is malfunctioning. To resolve this problem I would like you to pay me back the amount of 10 dollars. I look forward to hearing from you as soon as possible. Sincerely, Your Customer";
+            double percentage = StringCompare(messagetypedin, compareText);
+
+            if (percentage < 90)
+            {
+                SceneManager.LoadScene("Loss");
+            }
+            else
+            {
+                SceneManager.LoadScene("Win");
+            }
         }
+
+        
     }
 
     public void togglestart()
