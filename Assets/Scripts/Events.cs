@@ -179,6 +179,16 @@ public class Events : MonoBehaviour
         
     }
 
+    public void fullscreenON()
+    {
+        Screen.SetResolution(1920, 1080, true);
+    }
+
+    public void fullscreenOFF()
+    {
+        Screen.SetResolution(1920, 1080, false);
+    }
+
     public void togglestart()
     {
         if(startopened == true)
