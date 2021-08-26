@@ -7,8 +7,8 @@ using UnityEngine.UI;
 
 public class TimerScript : MonoBehaviour
 {
-    public GameObject TimerGameObject;
     public float TimeLeftInSeconds = 120;
+    public GameObject[] TimerGameObjects;
 
     // Start is called before the first frame update
     void Start()
@@ -21,7 +21,7 @@ public class TimerScript : MonoBehaviour
     {
         TimeLeftInSeconds -= Time.deltaTime;
 
-        if (TimerGameObject != null)
+        foreach (GameObject TimerGameObject in TimerGameObjects)
         {
             Text text = TimerGameObject.GetComponent<Text>();
             text.text = $"{GetMinutes():0}:{GetSeconds():00} Left";

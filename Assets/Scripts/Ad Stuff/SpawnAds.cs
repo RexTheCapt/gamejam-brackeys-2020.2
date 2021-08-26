@@ -8,6 +8,7 @@ using UnityEngine.UI;
 public class SpawnAds : MonoBehaviour
 {
     public bool EnableSpawnKey = false;
+    public bool DisableLoseCondition = false;
     public bool DisableTimer = false;
     public bool SpawnAd = false;
     public bool PurgeAds = false;
@@ -108,10 +109,10 @@ public class SpawnAds : MonoBehaviour
 
             if (start.AddMilliseconds(100) < System.DateTime.Now)
             {
-                Debug.LogWarning("Used more than one second on spawning popups!");
-                PurgeAds = true;
-                _currentTimer = 0;
-                break;
+               Debug.LogWarning("Too many popups to spawn!");
+               PurgeAds = true;
+               _currentTimer = 0;
+               break;
             }
         }
         //Debug.Log($"Used {(System.DateTime.Now) - start} seconds to spawn ads");
@@ -145,8 +146,11 @@ public class SpawnAds : MonoBehaviour
         }
         #endregion
 
-        if (SpawnedAds.Count > MaxAds)
-            SceneManager.LoadScene("loss");
+        if (!DisableLoseCondition)
+        {
+            if (SpawnedAds.Count > MaxAds)
+                SceneManager.LoadScene("loss");
+        }
     }
 
     public void PlayAdCloseSound()
