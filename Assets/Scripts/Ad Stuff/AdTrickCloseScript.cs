@@ -9,7 +9,17 @@ public class AdTrickCloseScript : MonoBehaviour
     public void CloseAd()
     {
         CloseAd closeAd = transform.parent.GetComponent<CloseAd>();
-        SpawnAds spawnAds = closeAd.spawner.GetComponent<SpawnAds>();
+        SpawnAds spawnAds;
+        try
+        {
+            spawnAds = closeAd.spawner.GetComponent<SpawnAds>();
+        }
+        catch
+        {
+            Debug.LogError("transform.parent.GetComponent<CloseAd>().spawner was not set! Trying to find it automatically.");
+            closeAd.spawner = GameObject.Find("Canvas");
+            spawnAds = closeAd.spawner.GetComponent<SpawnAds>();
+        };
 
         spawnAds._currentTimer += spawnAds.SpawnTimer * (TotalPresses++);
         closeAd.DestroyAd();

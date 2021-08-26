@@ -9,6 +9,12 @@ public class CloseAd : MonoBehaviour
 
     public void DestroyAd()
     {
+        if (spawner == null)
+        {
+            Debug.LogError("spawner is null! Trying to find it automatically.");
+            spawner = GameObject.Find("Canvas");
+        }
+
         spawner.GetComponent<SpawnAds>().PlayAdCloseSound();
         Destroy(gameObject);
     }
