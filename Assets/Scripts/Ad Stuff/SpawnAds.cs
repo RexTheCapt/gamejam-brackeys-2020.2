@@ -73,32 +73,28 @@ public class SpawnAds : MonoBehaviour
             PurgeAds = false;
         }
 
-        System.DateTime start = System.DateTime.Now;
+        System.DateTime start = System.DateTime.Now; 
         while ((_currentTimer > SpawnTimer && !DisableTimer) || SpawnAd)
         {
             Canvas canvas = gameObject.GetComponent<Canvas>();
             var spawnBounds = new Bounds(canvas.pixelRect.center, new Vector3(canvas.pixelRect.size.x - (SpawnOffset.x * 2), canvas.pixelRect.size.y - (SpawnOffset.y * 2), 0));
             Vector2 dimentions = new Vector2(spawnBounds.size.x / 2, spawnBounds.size.y / 2);
 
-            // X = Width
-            // Y = Height
+            // X = Width, Y = Height
             Vector2 randomDimention = new Vector2(Randomize(dimentions.x, dimentions.x * -1), Randomize(dimentions.y, dimentions.y * -1));
 
-            GameObject randomAd = AdList[Random.Range(0, AdList.Length)];
-            GameObject go = Instantiate(randomAd);
+            GameObject go = Instantiate(AdList[Random.Range(0, AdList.Length)]);
 
             go.transform.SetParent(AdsParent.transform, false);
             go.transform.localPosition = new Vector3(randomDimention.x, randomDimention.y, 0);
-            var drag = go.gameObject.GetComponentInChildren<drag>();
-            if (drag != null)
+            try
             {
-                drag.canvas = canvas;
+                go.gameObject.GetComponentInChildren<drag>().canvas = canvas;
                 go.gameObject.GetComponentInChildren<drag>().transformToMove = go.transform;
-            }
-            var closeAd = gameObject.GetComponentInChildren<CloseAd>();
-            if (closeAd != null)
-                closeAd.spawner = gameObject;
-
+            } catch { };
+            // What the hell is going on? This line only works once on the time accelerator ones, then never again!
+            // Had to make the time accelerator find the gameobject "Canvas" from code. Works for now.
+            try { gameObject.GetComponentInChildren<CloseAd>().spawner = gameObject; } catch {  };
             SpawnedAds.Add(go);
             gameObject.GetComponent<AudioSource>().PlayOneShot(_adOpenAudio);
 
@@ -107,13 +103,13 @@ public class SpawnAds : MonoBehaviour
 
             SpawnAd = false;
 
-            if (start.AddMilliseconds(100) < System.DateTime.Now)
-            {
-                Debug.LogWarning("Too many popups to spawn!");
-                PurgeAds = true;
-                _currentTimer = 0;
-                break;
-            }
+            //if (start.AddMilliseconds(100) < System.DateTime.Now)
+            //{
+            //    Debug.LogWarning("Too many popups to spawn!");
+            //    PurgeAds = true;
+            //    _currentTimer = 0;
+            //    break;
+            //}
         }
         //Debug.Log($"Used {(System.DateTime.Now) - start} seconds to spawn ads");
 
