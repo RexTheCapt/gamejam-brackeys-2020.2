@@ -140,12 +140,13 @@ public class TabManager : MonoBehaviour
 
     public void copied()
     {
-
+        copiedlabel.SetActive(true);
     }
 
     public void redirecterror()
     {
-
+        redirectbutton.SetActive(false);
+        ohno.SetActive(true);
     }
 
 }
