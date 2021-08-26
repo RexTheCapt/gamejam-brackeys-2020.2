@@ -8,6 +8,7 @@ using UnityEngine.UI;
 public class SpawnAds : MonoBehaviour
 {
     public bool EnableSpawnKey = false;
+    public bool DisableLoseCondition = false;
     public bool DisableTimer = false;
     public bool SpawnAd = false;
     public bool PurgeAds = false;
@@ -71,7 +72,7 @@ public class SpawnAds : MonoBehaviour
             PurgeAds = false;
         }
 
-        //System.DateTime start = System.DateTime.Now;
+        System.DateTime start = System.DateTime.Now;
         while ((_currentTimer > SpawnTimer && !DisableTimer) || SpawnAd)
         {
             Canvas canvas = gameObject.GetComponent<Canvas>();
@@ -87,10 +88,16 @@ public class SpawnAds : MonoBehaviour
 
             go.transform.SetParent(AdsParent.transform, false);
             go.transform.localPosition = new Vector3(randomDimention.x, randomDimention.y, 0);
-            go.gameObject.GetComponentInChildren<drag>().canvas = canvas;
-            go.gameObject.GetComponentInChildren<drag>().transformToMove = go.transform;
-            go.gameObject.GetComponentInChildren<CloseAd>().spawner = gameObject;
-            
+            var drag = go.gameObject.GetComponentInChildren<drag>();
+            if (drag != null)
+            {
+                drag.canvas = canvas;
+                go.gameObject.GetComponentInChildren<drag>().transformToMove = go.transform;
+            }
+            var closeAd = gameObject.GetComponentInChildren<CloseAd>();
+            if (closeAd != null)
+                closeAd.spawner = gameObject;
+
             SpawnedAds.Add(go);
             gameObject.GetComponent<AudioSource>().PlayOneShot(_adOpenAudio);
 
@@ -99,13 +106,13 @@ public class SpawnAds : MonoBehaviour
 
             SpawnAd = false;
 
-            //if (start.AddMilliseconds(10) < System.DateTime.Now)
-            //{
-            //    Debug.LogWarning("Used more than one second on spawning popups!");
-            //    PurgeAds = true;
-            //    _currentTimer = 0;
-            //    break;
-            //}
+            if (start.AddMilliseconds(100) < System.DateTime.Now)
+            {
+               Debug.LogWarning("Too many popups to spawn!");
+               PurgeAds = true;
+               _currentTimer = 0;
+               break;
+            }
         }
         //Debug.Log($"Used {(System.DateTime.Now) - start} seconds to spawn ads");
 
@@ -135,8 +142,11 @@ public class SpawnAds : MonoBehaviour
         }
         #endregion
 
-        if (SpawnedAds.Count > MaxAds)
-            SceneManager.LoadScene("loss");
+        if (!DisableLoseCondition)
+        {
+            if (SpawnedAds.Count > MaxAds)
+                SceneManager.LoadScene("loss");
+        }
     }
 
     public void PlayAdCloseSound()
