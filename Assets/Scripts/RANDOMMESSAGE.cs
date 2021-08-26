@@ -5,7 +5,10 @@ using UnityEngine.UI;
 
 public class RANDOMMESSAGE : MonoBehaviour
 {
-
+    [Header("Debug tools")]
+    public bool RunUpdate;
+    public bool ShowPasteText;
+    [Header("Messages to display")]
     public List<string> LossTexts = new List<string>()
     {
         "AM SCARED",
@@ -24,24 +27,28 @@ public class RANDOMMESSAGE : MonoBehaviour
     {
         "Sowwy, I dun knuw huw two wo dat >///<"
     };
-    public Text message;
     
     // Start is called before the first frame update
     void Start()
     {
+        Text text = gameObject.GetComponent<Text>();
         GameObject playerPaste = GameObject.Find("PlayerPasted");
-        if (playerPaste)
+        if (playerPaste || ShowPasteText)
         {
             Destroy(playerPaste);
-            message.text = PasteTexts[Random.Range(0, PasteTexts.Count)];
+            text.text = PasteTexts[Random.Range(0, PasteTexts.Count)];
         }
         else
-            message.text = LossTexts[Random.Range(0, LossTexts.Count)];
+            text.text = LossTexts[Random.Range(0, LossTexts.Count)];
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if (RunUpdate)
+        {
+            Start();
+            RunUpdate = false;
+        }
     }
 }

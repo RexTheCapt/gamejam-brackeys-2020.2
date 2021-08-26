@@ -1261,8 +1261,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b21f092204cc28742919f7908a9b6b00, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  messagetexts: []
-  message: {fileID: 1799574817}
+  RunUpdate: 0
+  ShowPasteText: 0
+  LossTexts:
+  - AM SCARED
+  - GOT LOST LMAO
+  - SAMPLE TEXT
+  - I SHOULD HAVE WRITTEN A LETTER
+  - CAN U TYPE?
+  - THEY DIDN'T REPLIED :(
+  - TRY YOUR BEST
+  - MAYBE TRY DOWNLOADING AN ANTIVIRUS?
+  - THAT EXPLAINS WHY NOBODY USED IT
+  - JUST WONDERING HOW EXPESIVE THIS PC WAS
+  - GAME OVER
+  PasteTexts:
+  - Sowwy, I dun knuw huw two wo dat >///<
+  - RAM does not support large text updates.
+  - '*sigh* you tried to paste, didnt you?'
+  - Pasting is overated
+  - Tried typing it in manually?
 --- !u!114 &1799574817
 MonoBehaviour:
   m_ObjectHideFlags: 0
