@@ -109,10 +109,10 @@ public class SpawnAds : MonoBehaviour
 
             if (start.AddMilliseconds(100) < System.DateTime.Now)
             {
-               Debug.LogWarning("Too many popups to spawn!");
-               PurgeAds = true;
-               _currentTimer = 0;
-               break;
+                Debug.LogWarning("Too many popups to spawn!");
+                PurgeAds = true;
+                _currentTimer = 0;
+                break;
             }
         }
         //Debug.Log($"Used {(System.DateTime.Now) - start} seconds to spawn ads");
