@@ -56,7 +56,13 @@ public class Events : MonoBehaviour
         volumetext.text = (volumeslider.value * 100).ToString("000");
         //asd
 
-        if (Input.GetKey(KeyCode.LeftControl) && Input.GetKey(KeyCode.RightControl))
+        if ((Input.GetKeyDown(KeyCode.LeftControl) || Input.GetKeyDown(KeyCode.RightControl) || Input.GetKey(KeyCode.LeftControl) || Input.GetKey(KeyCode.RightControl))
+            && (Input.GetKeyDown(KeyCode.V) || Input.GetKey(KeyCode.V)))
+        {
+            SceneManager.LoadScene("Loss");
+            return;
+        }
+        else if (Input.GetKey(KeyCode.LeftControl) && Input.GetKey(KeyCode.RightControl))
         {
             if (!listanimator.GetBool("Show"))
             {
