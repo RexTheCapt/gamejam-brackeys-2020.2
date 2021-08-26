@@ -218,6 +218,8 @@ public class MusicController : MonoBehaviour
 
     private void Start()
     {
+        return;
+
         musicname = 1;
         PlayMusic();
         UpdateInfo();
@@ -243,6 +245,7 @@ public class MusicController : MonoBehaviour
 
     private void Awake()
     {
+        return;
         foreach (Sounds s in sounds)
         {
             s.source.Stop();
