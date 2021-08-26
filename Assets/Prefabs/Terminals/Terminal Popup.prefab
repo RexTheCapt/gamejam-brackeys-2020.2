@@ -217,10 +217,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46afb1f23c36169489d066dc9e9920da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CurrentConsoleOutput: {fileID: 2062735065351411310}
   TimeToClose: 0
   Closing: 0
   OutputHandler: {fileID: 0}
-  CurrentConsoleOutput: {fileID: 2062735065351411310}
 --- !u!1 &2062735064891029330
 GameObject:
   m_ObjectHideFlags: 0
@@ -423,8 +423,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: New Text
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 587bfdf12a1252940b519e3fb093bccb, type: 2}
-  m_sharedMaterial: {fileID: -9098384558040246428, guid: 587bfdf12a1252940b519e3fb093bccb, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 9a2a8c49ad1b71f4aba3f40ec331de48, type: 2}
+  m_sharedMaterial: {fileID: 5666311447033065727, guid: 9a2a8c49ad1b71f4aba3f40ec331de48, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
