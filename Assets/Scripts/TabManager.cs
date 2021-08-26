@@ -149,4 +149,61 @@ public class TabManager : MonoBehaviour
         ohno.SetActive(true);
     }
 
+    public InputField urlinput;
+    public GameObject newpassPage;
+
+    public InputField newpass1;
+    public InputField newpass2;
+
+    public void resetpasswordURLTyped()
+    {
+        if(urlinput.text == "https://www.viruscrusher.com/resetpassword/gd+01")
+        {
+            resetpage.SetActive(false);
+            newpassPage.SetActive(true);
+
+            newpass1.text = "";
+            newpass2.text = "";
+        }
+        else
+        {
+            resetpage.SetActive(false);
+            newpassPage.SetActive(false);
+            defaulpage.SetActive(false);
+        }
+
+
+    }
+
+    public string password = " ";
+
+    public void applynewpassword()
+    {
+        if(newpass1.text == newpass2.text)
+        {
+            password = newpass1.text;
+            resetpage.SetActive(false);
+            newpassPage.SetActive(false);
+            defaulpage.SetActive(true);
+        }
+
+    }
+
+    public InputField loginpasswordinput;
+    public InputField loginemailinput;
+    public GameObject playerlogonpage;
+
+    public void loginon()
+    {
+        if(loginpasswordinput.text == password || loginpasswordinput.text != " " || password != " " || loginemailinput.text == "supeRsecretGuY4@cursedmail.com")
+        {
+            resetpage.SetActive(false);
+            newpassPage.SetActive(false);
+            defaulpage.SetActive(false);
+
+            playerlogonpage.SetActive(true);
+        }
+
+    }
+
 }
