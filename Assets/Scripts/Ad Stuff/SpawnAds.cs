@@ -98,7 +98,7 @@ public class SpawnAds : MonoBehaviour
             var closeAd = gameObject.GetComponentInChildren<CloseAd>();
             if (closeAd != null)
                 closeAd.spawner = gameObject;
-
+            
             SpawnedAds.Add(go);
             gameObject.GetComponent<AudioSource>().PlayOneShot(_adOpenAudio);
 

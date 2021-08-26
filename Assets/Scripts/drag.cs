@@ -6,13 +6,15 @@ using UnityEngine.UI;
 
 public class drag : MonoBehaviour, IDragHandler
 {
-    [Header("Ad stuff")]
-    [SerializeField] private Transform parent;
+    [Header("Required")]
+    public Transform transformToMove;
+    public Canvas canvas;
     [SerializeField] private DragType dragType = DragType.Normal;
+    [Header("Popup stuff")]
+    [SerializeField] private Transform parent;
     
     [Header("Other stuff")]
     [SerializeField] private RectTransform dragRectTransform;
-    public Canvas canvas;
 
     public Collider2D screenbounds;
 
@@ -41,8 +43,6 @@ public class drag : MonoBehaviour, IDragHandler
             
         }
     }
-    
-    public Transform transformToMove;
 
     private enum DragType
     {
