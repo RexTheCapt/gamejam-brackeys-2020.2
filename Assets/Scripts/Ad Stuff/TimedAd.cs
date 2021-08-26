@@ -21,7 +21,22 @@ public class TimedAd : MonoBehaviour
 
         //if (TimeLeft < 0)
         {
-            gameObject.GetComponent<CloseAd>().spawner.GetComponent<SpawnAds>()._currentTimer += Time.deltaTime;
+            CloseAd closeAd = gameObject.GetComponent<CloseAd>();
+            SpawnAds spawnAds;
+            try
+            {
+                spawnAds = closeAd.spawner.GetComponent<SpawnAds>();
+            }
+            catch
+            {
+                // Why does this keep being blank? It is getting set in SpawnAds.cs!
+                // It works on the first time accelerator!
+                // Why cant it just work for them all?
+                Debug.LogError("gameObject.GetComponent<SpawnAds>().Spawner was not set! Trying to self assign");
+                closeAd.spawner = GameObject.Find("Canvas");
+                return;
+            }
+            spawnAds._currentTimer += Time.deltaTime;
         }
         //else
         //{
