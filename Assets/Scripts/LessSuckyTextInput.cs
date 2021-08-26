@@ -4,8 +4,8 @@ using UnityEngine.EventSystems;
      
 public class LessSuckyTextInput : InputField
 {
-    new public bool Focused = false;
-    new public bool Deactivated = false;
+    public bool Focused = false;
+    public bool Deactivated = false;
      
     new public void ActivateInputField()
     {

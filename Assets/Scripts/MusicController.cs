@@ -220,7 +220,9 @@ public class MusicController : MonoBehaviour
     {
         return;
 
+#pragma warning disable CS0162 // Unreachable code detected
         musicname = 1;
+#pragma warning restore CS0162 // Unreachable code detected
         PlayMusic();
         UpdateInfo();
 
@@ -246,7 +248,9 @@ public class MusicController : MonoBehaviour
     private void Awake()
     {
         return;
+#pragma warning disable CS0162 // Unreachable code detected
         foreach (Sounds s in sounds)
+#pragma warning restore CS0162 // Unreachable code detected
         {
             s.source.Stop();
         }
