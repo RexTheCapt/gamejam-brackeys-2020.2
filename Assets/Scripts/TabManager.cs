@@ -126,6 +126,26 @@ public class TabManager : MonoBehaviour
         return Mathf.Round(value * mult) / mult;
     }
 
+    public GameObject resetpage;
+    public GameObject defaulpage;
+    public GameObject copiedlabel;
+    public GameObject ohno;
+    public GameObject redirectbutton;
 
+    public void resetpassword()
+    {
+        defaulpage.SetActive(false);
+        resetpage.SetActive(true);
+    }
+
+    public void copied()
+    {
+
+    }
+
+    public void redirecterror()
+    {
+
+    }
 
 }
