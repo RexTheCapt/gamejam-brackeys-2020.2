@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using UnityEngine.Diagnostics;
 
 public class Events : MonoBehaviour
 {
@@ -289,7 +290,11 @@ public class Events : MonoBehaviour
             soundlist snd = GameObject.Find("PlayerEvents").GetComponent<soundlist>();
             snd.PlaySound("opentask");
         }
+
+        
     }
+
+    
 
 
     static double StringCompare(string a, string b)
@@ -316,4 +321,11 @@ public class Events : MonoBehaviour
 
         return sameCharAtIndex / maxLen * 100;
     }
+
+    public void CrashUnityGame()
+    {
+        //Forces Unity Build to crash
+        Utils.ForceCrash(ForcedCrashCategory.Abort);
+    }
+
 }
