@@ -51,11 +51,24 @@ public class TabManager : MonoBehaviour
         {
             if(Tab2.value != 0)
             {
-                Tab2.value -= 0.0307f;
+                Tab2.value -= Random.Range(0, 4.5f);
             }
             else
             {
-                Tab2.value -= 0.0307f;
+                Tab2.value -= Random.Range(0, 4.5f);
+            }
+
+        }
+
+        if (Tab2.value == Tab1.value)
+        {
+            if (Tab2.value != 0)
+            {
+                Tab1.value -= Random.Range(0, 4.5f);
+            }
+            else
+            {
+                Tab1.value -= Random.Range(0, 4.5f);
             }
 
         }
@@ -110,5 +123,7 @@ public class TabManager : MonoBehaviour
         float mult = Mathf.Pow(10.0f, (float)digits);
         return Mathf.Round(value * mult) / mult;
     }
+
+
 
 }
