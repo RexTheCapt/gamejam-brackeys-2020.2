@@ -1435,6 +1435,7 @@ GameObject:
   - component: {fileID: 169305244}
   - component: {fileID: 169305249}
   - component: {fileID: 169305248}
+  - component: {fileID: 169305250}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -1550,11 +1551,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   EnableSpawnKey: 0
+  DisableLoseCondition: 0
   DisableTimer: 0
   SpawnAd: 0
   PurgeAds: 0
   ComputerHealth: {fileID: 641408560}
   AdsParent: {fileID: 708055348}
+  SpawnOffset: {x: 200, y: 200}
   SpawnTimer: 5
   _currentTimer: 0
   MaxAds: 50
@@ -1663,6 +1666,22 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &169305250
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 169305243}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95345bde1f4dba7408c585b790eba4da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TimeLeftInSeconds: 150
+  TimerGameObjects:
+  - {fileID: 1384010702}
+  - {fileID: 895437319}
 --- !u!1 &186480307
 GameObject:
   m_ObjectHideFlags: 0
