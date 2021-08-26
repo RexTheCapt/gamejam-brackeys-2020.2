@@ -23,6 +23,7 @@ public class TabManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        /*
         if(Tab1.value < (Tab2.value - 0.2f) || Tab1.value < Tab2.value)
         {
             //nothing
@@ -34,7 +35,7 @@ public class TabManager : MonoBehaviour
                 //Tab1.value -= (Tab2.value - Tab1.value);
             }
         }
-
+        */
         
 
         if(draggingTab1 == false)
@@ -47,15 +48,16 @@ public class TabManager : MonoBehaviour
             Tab2.value = Mathf.Round(Tab2.value);
         }
 
+
         if(Tab1.value == Tab2.value)
         {
             if(Tab2.value != 0)
             {
-                Tab2.value -= Random.Range(0, 4.5f);
+                Tab2.value -= Random.Range(0, Tab2.value);
             }
             else
             {
-                Tab2.value -= Random.Range(0, 4.5f);
+                Tab2.value -= Random.Range(0, Tab2.value);
             }
 
         }
@@ -64,11 +66,11 @@ public class TabManager : MonoBehaviour
         {
             if (Tab2.value != 0)
             {
-                Tab1.value -= Random.Range(0, 4.5f);
+                Tab1.value -= Random.Range(0, Tab1.value);
             }
             else
             {
-                Tab1.value -= Random.Range(0, 4.5f);
+                Tab1.value -= Random.Range(0, Tab1.value);
             }
 
         }
