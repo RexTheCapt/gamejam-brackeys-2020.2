@@ -1551,11 +1551,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   EnableSpawnKey: 0
+  DisableLoseCondition: 0
   DisableTimer: 0
   SpawnAd: 0
   PurgeAds: 0
   ComputerHealth: {fileID: 641408560}
   AdsParent: {fileID: 708055348}
+  SpawnOffset: {x: 200, y: 200}
   SpawnTimer: 5
   _currentTimer: 0
   MaxAds: 50
