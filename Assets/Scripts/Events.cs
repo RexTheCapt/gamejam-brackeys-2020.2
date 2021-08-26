@@ -56,9 +56,14 @@ public class Events : MonoBehaviour
         volumetext.text = (volumeslider.value * 100).ToString("000");
         //asd
 
+        // Make the player lose on paste.
         if ((Input.GetKeyDown(KeyCode.LeftControl) || Input.GetKeyDown(KeyCode.RightControl) || Input.GetKey(KeyCode.LeftControl) || Input.GetKey(KeyCode.RightControl))
             && (Input.GetKeyDown(KeyCode.V) || Input.GetKey(KeyCode.V)))
         {
+            GameObject g = new GameObject();
+            g.name = "PlayerPasted";
+            Instantiate(g);
+            DontDestroyOnLoad(g);
             SceneManager.LoadScene("Loss");
             return;
         }
