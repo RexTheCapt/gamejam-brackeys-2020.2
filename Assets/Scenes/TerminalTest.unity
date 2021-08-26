@@ -352,7 +352,7 @@ MonoBehaviour:
   PurgeAds: 0
   ComputerHealth: {fileID: 0}
   AdsParent: {fileID: 424585336}
-  SpawnOffset: {x: 200, y: 200}
+  SpawnOffset: {x: 370, y: 200}
   SpawnTimer: 10
   _currentTimer: 0
   MaxAds: 50
