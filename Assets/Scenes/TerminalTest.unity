@@ -215,8 +215,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Click here to input text, write \"close <terminal id>\" to close targeted
-    terminal\u200B"
+  m_text: "\u200B"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 587bfdf12a1252940b519e3fb093bccb, type: 2}
   m_sharedMaterial: {fileID: -9098384558040246428, guid: 587bfdf12a1252940b519e3fb093bccb, type: 2}
@@ -457,7 +456,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c56ccf047f110241ae065b725c7cd51, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxLines: 20
+  MaxLines: 23
   lines: []
 --- !u!1 &1293002476
 GameObject:
@@ -958,7 +957,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1567406809}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
@@ -971,8 +970,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Click here to input text, write \"close <terminal id>\" to close targeted
-    terminal\u200B"
+  m_text: Click here and type "help" to get an list of commands
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 587bfdf12a1252940b519e3fb093bccb, type: 2}
   m_sharedMaterial: {fileID: -9098384558040246428, guid: 587bfdf12a1252940b519e3fb093bccb, type: 2}
@@ -981,7 +979,7 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 2150773298
+    rgba: 2147548928
   m_fontColor: {r: 0, g: 1, b: 0, a: 0.5}
   m_enableVertexGradient: 0
   m_colorMode: 3
@@ -1362,8 +1360,7 @@ MonoBehaviour:
   m_CaretColor: {r: 0, g: 1, b: 0, a: 1}
   m_CustomCaretColor: 1
   m_SelectionColor: {r: 0, g: 0.5686275, b: 0, a: 0.44705883}
-  m_Text: Click here to input text, write "close <terminal id>" to close targeted
-    terminal
+  m_Text: 
   m_CaretBlinkRate: 0.85
   m_CaretWidth: 1
   m_ReadOnly: 0
@@ -1425,6 +1422,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d57d9fa5a1db064469ef6e8a7111a549, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spawnAds: {fileID: 1504480724}
   closeTerminal: {fileID: 1504480726}
   ConsoleOutputHandler: {fileID: 1256977928}
   HandlerActive: 0
