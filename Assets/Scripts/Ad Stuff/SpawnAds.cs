@@ -14,6 +14,7 @@ public class SpawnAds : MonoBehaviour
 
     public GameObject ComputerHealth;
     public GameObject AdsParent;
+    public Vector2 SpawnOffset;
     public float SpawnTimer = 10;
     public float _currentTimer;
     public int MaxAds = 50;
@@ -71,11 +72,11 @@ public class SpawnAds : MonoBehaviour
             PurgeAds = false;
         }
 
-        //System.DateTime start = System.DateTime.Now;
+        System.DateTime start = System.DateTime.Now;
         while ((_currentTimer > SpawnTimer && !DisableTimer) || SpawnAd)
         {
             Canvas canvas = gameObject.GetComponent<Canvas>();
-            var spawnBounds = canvas.pixelRect;
+            var spawnBounds = new Bounds(canvas.pixelRect.center, new Vector3(canvas.pixelRect.size.x - (SpawnOffset.x * 2), canvas.pixelRect.size.y - (SpawnOffset.y * 2), 0));
             Vector2 dimentions = new Vector2(spawnBounds.size.x / 2, spawnBounds.size.y / 2);
 
             // X = Width
@@ -87,9 +88,15 @@ public class SpawnAds : MonoBehaviour
 
             go.transform.SetParent(AdsParent.transform, false);
             go.transform.localPosition = new Vector3(randomDimention.x, randomDimention.y, 0);
-            go.gameObject.GetComponentInChildren<drag>().canvas = canvas;
-            go.gameObject.GetComponentInChildren<drag>().transformToMove = go.transform;
-            go.gameObject.GetComponentInChildren<CloseAd>().spawner = gameObject;
+            var drag = go.gameObject.GetComponentInChildren<drag>();
+            if (drag != null)
+            {
+                drag.canvas = canvas;
+                go.gameObject.GetComponentInChildren<drag>().transformToMove = go.transform;
+            }
+            var closeAd = gameObject.GetComponentInChildren<CloseAd>();
+            if (closeAd != null)
+                closeAd.spawner = gameObject;
             
             SpawnedAds.Add(go);
             gameObject.GetComponent<AudioSource>().PlayOneShot(_adOpenAudio);
@@ -99,39 +106,42 @@ public class SpawnAds : MonoBehaviour
 
             SpawnAd = false;
 
-            //if (start.AddMilliseconds(10) < System.DateTime.Now)
-            //{
-            //    Debug.LogWarning("Used more than one second on spawning popups!");
-            //    PurgeAds = true;
-            //    _currentTimer = 0;
-            //    break;
-            //}
+            if (start.AddMilliseconds(100) < System.DateTime.Now)
+            {
+                Debug.LogWarning("Used more than one second on spawning popups!");
+                PurgeAds = true;
+                _currentTimer = 0;
+                break;
+            }
         }
         //Debug.Log($"Used {(System.DateTime.Now) - start} seconds to spawn ads");
 
         #region PC Health stuff
-        float adPercent = (float)SpawnedAds.Count / MaxAds;
-        Text healthText = ComputerHealth.GetComponent<Text>();
+        if (ComputerHealth != null)
+        {
+            Text healthText = ComputerHealth.GetComponent<Text>();
+            float adPercent = (float)SpawnedAds.Count / MaxAds;
 
-        if (adPercent < .2f)
-        {
-            healthText.text = "PC Life: OK";
-            healthText.color = new Color(0, 0, 1);
-        }
-        else if (adPercent < .4f)
-        {
-            healthText.text = "PC Life: Mostly OK";
-            healthText.color = new Color(0, 1, 0);
-        }
-        else if (adPercent < .6f)
-        {
-            healthText.text = "PC Life: Not OK";
-            healthText.color = new Color(1, 1, 0);
-        }
-        else if (adPercent < .8f)
-        {
-            healthText.text = "PC Life: HELP ME!!!";
-            healthText.color = new Color(1, 0, 0);
+            if (adPercent < .2f)
+            {
+                healthText.text = "PC Life: OK";
+                healthText.color = new Color(0, 0, 1);
+            }
+            else if (adPercent < .4f)
+            {
+                healthText.text = "PC Life: Mostly OK";
+                healthText.color = new Color(0, 1, 0);
+            }
+            else if (adPercent < .6f)
+            {
+                healthText.text = "PC Life: Not OK";
+                healthText.color = new Color(1, 1, 0);
+            }
+            else if (adPercent < .8f)
+            {
+                healthText.text = "PC Life: HELP ME!!!";
+                healthText.color = new Color(1, 0, 0);
+            }
         }
         #endregion
 
