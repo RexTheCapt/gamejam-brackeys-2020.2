@@ -1519,11 +1519,11 @@ RectTransform:
   - {fileID: 1324862224}
   - {fileID: 71523423}
   - {fileID: 854498136}
+  - {fileID: 708055349}
+  - {fileID: 8158369917277680034}
   - {fileID: 366851522}
   - {fileID: 878978470}
   - {fileID: 2033923876}
-  - {fileID: 708055349}
-  - {fileID: 8158369917277680034}
   - {fileID: 1697272189}
   - {fileID: 1406660885}
   - {fileID: 673934758}
@@ -1562,12 +1562,12 @@ MonoBehaviour:
   _currentTimer: 0
   MaxAds: 50
   AdList:
-  - {fileID: 8158369917453079063, guid: 11b750aecb604f243b35202127b2f4f3, type: 3}
-  - {fileID: 8158369917453079063, guid: f959730ae5d4ca442b078caa8da9ee81, type: 3}
-  - {fileID: 8158369917453079063, guid: cad96d88d07c80345b77bc5d62f45705, type: 3}
-  - {fileID: 8158369917453079063, guid: 9312e95fca573c846b889da0b1ed9ccb, type: 3}
   - {fileID: 8158369917453079063, guid: 4159278323bf3814a9ea7a0f1498b17d, type: 3}
+  - {fileID: 8158369917453079063, guid: f959730ae5d4ca442b078caa8da9ee81, type: 3}
+  - {fileID: 8158369917453079063, guid: 9312e95fca573c846b889da0b1ed9ccb, type: 3}
+  - {fileID: 8158369917453079063, guid: 11b750aecb604f243b35202127b2f4f3, type: 3}
   - {fileID: 8158369917453079063, guid: 583e43d65e43da747af6d9778a294d7b, type: 3}
+  - {fileID: 8158369917453079063, guid: cad96d88d07c80345b77bc5d62f45705, type: 3}
   - {fileID: 8158369917453079063, guid: 15a903a866029184db7f9bbef9f66c58, type: 3}
   SpawnedAds: []
 --- !u!82 &169305249
@@ -1582,7 +1582,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.3
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -3773,7 +3773,7 @@ RectTransform:
   - {fileID: 1697525119}
   - {fileID: 545651521}
   m_Father: {fileID: 169305247}
-  m_RootOrder: 4
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -7689,7 +7689,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 169305247}
-  m_RootOrder: 7
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &710909854
 GameObject:
@@ -8922,7 +8922,7 @@ RectTransform:
   - {fileID: 186480308}
   - {fileID: 643948198}
   m_Father: {fileID: 169305247}
-  m_RootOrder: 5
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -13163,7 +13163,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -298, y: -304}
+  m_AnchoredPosition: {x: 1536, y: -161}
   m_SizeDelta: {x: -1636.2412, y: -953.3334}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1406660886
@@ -13236,11 +13236,11 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 0
-  m_Volume: 1
+  m_audioClip: {fileID: 8300000, guid: d2e79b47b13b9644c9c67e53c6a30f57, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 0.3
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -19021,7 +19021,7 @@ RectTransform:
   - {fileID: 1413486797}
   - {fileID: 869453699}
   m_Father: {fileID: 169305247}
-  m_RootOrder: 6
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -20744,7 +20744,7 @@ RectTransform:
   - {fileID: 5398756025946238919}
   - {fileID: 4044103233755397536}
   m_Father: {fileID: 169305247}
-  m_RootOrder: 8
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -20762,7 +20762,7 @@ GameObject:
   - component: {fileID: 8158369917277680034}
   - component: {fileID: 8158369917277680033}
   m_Layer: 5
-  m_Name: Ad Random Text
+  m_Name: The Only Useful Popup
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
