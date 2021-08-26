@@ -23,4 +23,10 @@ public class ConsoleOutputHandler : MonoBehaviour
             tMP_Text.text += $"{line}\n";
         }
     }
+
+    public void Clear()
+    {
+        lines.Clear();
+        GetComponent<TMPro.TMP_Text>().text = "";
+    }
 }
