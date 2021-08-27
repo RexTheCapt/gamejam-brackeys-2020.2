@@ -7,6 +7,11 @@ public class CloseAd : MonoBehaviour
     public GameObject Body;
     public GameObject spawner;
 
+    private void Start()
+    {
+        spawner = GameObject.Find("Canvas");
+    }
+
     public void DestroyAd()
     {
         spawner.GetComponent<SpawnAds>().PlayAdCloseSound();
