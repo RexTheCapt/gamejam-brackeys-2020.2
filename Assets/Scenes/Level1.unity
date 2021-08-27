@@ -20331,9 +20331,17 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Please hold down both CTRL buttons
+  m_Text: 'Two buttons are needed to show the paper
 
-    to show the paper.'
+    Left and right. You also
+    have to send
+
+    this text as an email to win. Type correctly.
+
+    Left: Ctrl,
+    Alt
+
+    Right: AltGr, context, menu Ctrl'
 --- !u!222 &2984258742784752818
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -20366,7 +20374,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -79.99994, y: 73.4}
+  m_AnchoredPosition: {x: -96.7, y: 75}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &5314495513348642760
@@ -20441,8 +20449,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -48.350567, y: 80.5}
-  m_SizeDelta: {x: 105.3758, y: -94.412}
+  m_AnchoredPosition: {x: -46.565983, y: 80.5}
+  m_SizeDelta: {x: 144.7601, y: -94.412}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &5599692283501809753
 GameObject:
@@ -20516,7 +20524,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Close helpful popup
+  m_Text: I agree to to the terms above
 --- !u!1 &6594048079116577657
 GameObject:
   m_ObjectHideFlags: 0
@@ -20709,8 +20717,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -35.6424, y: 13.7506}
-  m_SizeDelta: {x: 187.5592, y: 77.6988}
+  m_AnchoredPosition: {x: -35.6424, y: 11.7044}
+  m_SizeDelta: {x: 187.5592, y: 105.5921}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &8158369917277680033
 MonoBehaviour:
@@ -20863,8 +20871,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -34.0484, y: 0}
-  m_SizeDelta: {x: 268.0968, y: 200}
+  m_AnchoredPosition: {x: -37.226086, y: 0}
+  m_SizeDelta: {x: 298.2852, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8158369918891743160
 CanvasRenderer:
@@ -21034,7 +21042,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 79.8, y: 80.5}
+  m_AnchoredPosition: {x: 92, y: 80.5}
   m_SizeDelta: {x: 32, y: 32}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &8158369918932060111
