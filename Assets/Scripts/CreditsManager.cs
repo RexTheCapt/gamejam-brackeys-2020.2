@@ -48,6 +48,6 @@ public class CreditsManager : MonoBehaviour
 
     public static void PlayAgain()
     {
-        SceneManager.LoadScene("Level1");
+        SceneManager.LoadScene("Complain");
     }
 }
