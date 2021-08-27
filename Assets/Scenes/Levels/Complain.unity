@@ -1553,7 +1553,7 @@ MonoBehaviour:
   EnableSpawnKey: 0
   DisableLoseCondition: 0
   DisableTimer: 0
-  SpawnAd: 0
+  SpawnAd: 1
   PurgeAds: 0
   ComputerHealth: {fileID: 641408560}
   AdsParent: {fileID: 708055348}

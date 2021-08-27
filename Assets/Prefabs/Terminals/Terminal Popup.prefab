@@ -217,10 +217,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46afb1f23c36169489d066dc9e9920da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CurrentConsoleOutput: {fileID: 2062735065351411310}
   TimeToClose: 0
   Closing: 0
   OutputHandler: {fileID: 0}
-  CurrentConsoleOutput: {fileID: 2062735065351411310}
 --- !u!1 &2062735064891029330
 GameObject:
   m_ObjectHideFlags: 0
@@ -286,7 +286,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Title Text
+  m_text: 'Command Prompt
+
+'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
