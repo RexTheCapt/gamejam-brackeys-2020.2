@@ -67,7 +67,8 @@ public class Events : MonoBehaviour
             SceneManager.LoadScene("Loss");
             return;
         }
-        else if (Input.GetKey(KeyCode.LeftControl) && Input.GetKey(KeyCode.RightControl))
+        // Show the paper
+        else if ((Input.GetKey(KeyCode.LeftControl) || Input.GetKey(KeyCode.LeftAlt)) && (Input.GetKey(KeyCode.RightControl) || Input.GetKey(KeyCode.AltGr) || Input.GetKey(KeyCode.RightAlt) || Input.GetKey(KeyCode.Menu)))
         {
             if (!listanimator.GetBool("Show"))
             {
