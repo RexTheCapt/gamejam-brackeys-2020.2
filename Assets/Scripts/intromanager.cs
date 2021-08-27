@@ -52,6 +52,6 @@ public class intromanager : MonoBehaviour
         yield return new WaitForSecondsRealtime(0.4f);
         missionanimator.SetTrigger("out");
         yield return new WaitForSecondsRealtime(3.7f);
-        SceneManager.LoadScene("Level1");
+        SceneManager.LoadScene("Complain");
     }
 }
