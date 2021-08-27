@@ -21,7 +21,19 @@ public class CloseAd : MonoBehaviour
 
     public void SpawnMoreThenDestroyAd()
     {
-        SpawnAds s = spawner.GetComponent<SpawnAds>();
+        SpawnAds s;
+
+        if (spawner != null)
+        {
+            s = spawner.GetComponent<SpawnAds>();
+        }
+        else
+        {
+            Debug.LogError("spawner is null! Trying to find it automatically.");
+            spawner = GameObject.Find("Canvas");
+            s = spawner.GetComponent<SpawnAds>();
+        }
+
         s._currentTimer += s.SpawnTimer * Random.Range(2, 10);
         
         DestroyAd();
