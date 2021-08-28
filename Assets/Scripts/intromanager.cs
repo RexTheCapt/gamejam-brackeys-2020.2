@@ -16,6 +16,8 @@ public class intromanager : MonoBehaviour
     public GameObject missionpanel;
 
     public Animator missionanimator;
+    public AudioSource melody;
+    public float waitformusicinsec;
 
 
     // Start is called before the first frame update
@@ -23,12 +25,20 @@ public class intromanager : MonoBehaviour
     {
         StartCoroutine(cooldown());
         p4gpanel.SetActive(true);
+
+        StartCoroutine(musiccooldown());
     }
 
     // Update is called once per frame
     void Update()
     {
         
+    }
+
+    public IEnumerator musiccooldown()
+    {
+        yield return new WaitForSecondsRealtime(waitformusicinsec);
+        melody.Play();
     }
 
     public IEnumerator cooldown()
