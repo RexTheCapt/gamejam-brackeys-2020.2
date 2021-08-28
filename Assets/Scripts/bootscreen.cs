@@ -8,7 +8,7 @@ public class bootscreen : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        StartCoroutine(timeout());
     }
 
     // Update is called once per frame
