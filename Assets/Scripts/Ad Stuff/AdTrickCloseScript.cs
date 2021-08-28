@@ -4,12 +4,13 @@ using UnityEngine;
 
 public class AdTrickCloseScript : MonoBehaviour
 {
-    public static int TotalPresses = 0;
+    public static int TotalPresses = 1;
 
     public void CloseAd()
     {
         CloseAd closeAd = transform.parent.GetComponent<CloseAd>();
         SpawnAds spawnAds;
+
         try
         {
             spawnAds = closeAd.spawner.GetComponent<SpawnAds>();
@@ -21,7 +22,7 @@ public class AdTrickCloseScript : MonoBehaviour
             spawnAds = closeAd.spawner.GetComponent<SpawnAds>();
         };
 
-        spawnAds._currentTimer += spawnAds.SpawnTimer * (TotalPresses++);
+        spawnAds._currentTimer += spawnAds.SpawnTimer * (TotalPresses++ * 5);
         closeAd.DestroyAd();
     }
 }
