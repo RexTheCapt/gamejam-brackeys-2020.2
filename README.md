@@ -1,5 +1,6 @@
 # gamejam-brackeys-2020.2
-game for brackey's gamejam 2020
+game for brackey's gamejam 2020  
+Itch.io page: https://rexthecapt.itch.io/customers-nightmare
 
 ## Credits
 RexTheCapt : Programmer  
