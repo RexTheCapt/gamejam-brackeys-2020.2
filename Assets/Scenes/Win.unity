@@ -687,7 +687,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   wincanvas: {fileID: 903303624}
   endmusic: {fileID: 153738085}
-  exitbuttontext: {fileID: 0}
+  exitbuttontext: {fileID: 261794669}
 --- !u!4 &784791831
 Transform:
   m_ObjectHideFlags: 0
