@@ -55,7 +55,7 @@ public class CreditsManager : MonoBehaviour
 
     public void exitgame()
     {
-        StartCoroutine(exit());
+        Application.Quit();
     }
 
     public Text buttontext;
