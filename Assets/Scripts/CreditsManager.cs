@@ -55,6 +55,7 @@ public class CreditsManager : MonoBehaviour
 
     public void exitgame()
     {
+        Debug.Log("Exit clicked");
         Application.Quit();
     }
 
