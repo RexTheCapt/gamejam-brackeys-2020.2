@@ -265,6 +265,24 @@ public class Events : MonoBehaviour
         Screen.SetResolution(1920, 1080, false);
     }
 
+    public GameObject finalturnoff;
+
+
+    public void showturnoff()
+    {
+        finalturnoff.SetActive(true);
+    }
+
+    public void hideturnoff()
+    {
+        finalturnoff.SetActive(false);
+    }
+
+    public void turnoff()
+    {
+        Application.Quit();
+    }
+
     public void togglestart()
     {
         if(startopened == true)

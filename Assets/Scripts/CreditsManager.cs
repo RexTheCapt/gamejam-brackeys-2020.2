@@ -1,8 +1,10 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class CreditsManager : MonoBehaviour
 {
@@ -49,5 +51,18 @@ public class CreditsManager : MonoBehaviour
     public static void PlayAgain()
     {
         SceneManager.LoadScene("Level1");
+    }
+
+    public void exitgame()
+    {
+        StartCoroutine(exit());
+    }
+
+    public Text buttontext;
+    public IEnumerator exit()
+    {
+        buttontext.text = "BYE :)";
+        yield return new WaitForSecondsRealtime(1f);
+        Application.Quit();
     }
 }
