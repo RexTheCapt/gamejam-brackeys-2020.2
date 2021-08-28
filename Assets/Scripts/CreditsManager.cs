@@ -63,6 +63,11 @@ public class CreditsManager : MonoBehaviour
     {
         buttontext.text = "BYE :)";
         yield return new WaitForSecondsRealtime(1f);
+        exittest();
+    }
+
+    public void exittest()
+    {
         Application.Quit();
     }
 }
