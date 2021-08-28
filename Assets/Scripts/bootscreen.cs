@@ -19,7 +19,7 @@ public class bootscreen : MonoBehaviour
 
     public IEnumerator timeout()
     {
-        yield return new WaitForSecondsRealtime(2.89f);
+        yield return new WaitForSecondsRealtime(5.9f);
         SceneManager.LoadScene("Level1");
     }
 }
