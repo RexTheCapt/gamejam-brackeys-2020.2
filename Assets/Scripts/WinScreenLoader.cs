@@ -56,6 +56,7 @@ public class WinScreenLoader : MonoBehaviour
 
     public IEnumerator Exitgame()
     {
+        Debug.Log("exit game");
         exitbuttontext.text = "BYE :D";
         yield return new WaitForSecondsRealtime(1f);
         Application.Quit();

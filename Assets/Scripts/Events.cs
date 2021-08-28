@@ -280,6 +280,7 @@ public class Events : MonoBehaviour
 
     public void turnoff()
     {
+        Debug.Log("Exit game");
         Application.Quit();
     }
 
